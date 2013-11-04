@@ -23,6 +23,20 @@ class User < ActiveRecord::Base
   :primary_key => :id
   )
   
+  has_many(
+  :friends,
+  :class_name => "Friend",
+  :foreign_key => :user_id,
+  :primary_key => :id
+  )
+  
+  has_many(
+  :followed_users,
+  :class_name => "Friend",
+  :foreign_key => :follower_id,
+  :primary_key => :id
+  )
+  
   has_many :liked_bookmarks, :through => :favorites, :source => :bookmark
   
   
