@@ -9,6 +9,15 @@ class User < ActiveRecord::Base
     self.reset_session_token! if !self.session_token
   end
   
+  has_many(
+  :bookmarks,
+  :class_name => "Bookmark",
+  :foreign_key => :user_id,
+  :primary_key => :id
+  )
+  
+  
+  
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
