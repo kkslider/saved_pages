@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131104055624) do
+ActiveRecord::Schema.define(:version => 20131104101114) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -23,6 +23,28 @@ ActiveRecord::Schema.define(:version => 20131104055624) do
   end
 
   add_index "bookmarks", ["user_id"], :name => "index_bookmarks_on_user_id"
+
+  create_table "favorites", :force => true do |t|
+    t.integer  "user_id",     :null => false
+    t.integer  "bookmark_id", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "favorites", ["bookmark_id", "user_id"], :name => "index_liked_bookmarks_on_bookmark_id_and_user_id", :unique => true
+  add_index "favorites", ["bookmark_id"], :name => "index_liked_bookmarks_on_bookmark_id"
+  add_index "favorites", ["user_id"], :name => "index_liked_bookmarks_on_user_id"
+
+  create_table "friends", :force => true do |t|
+    t.integer  "user_id",     :null => false
+    t.integer  "follower_id", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "friends", ["follower_id"], :name => "index_friends_on_follower_id"
+  add_index "friends", ["user_id", "follower_id"], :name => "index_friends_on_user_id_and_follower_id", :unique => true
+  add_index "friends", ["user_id"], :name => "index_friends_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",           :null => false
