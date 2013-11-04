@@ -1,3 +1,4 @@
 BriskPaper::Application.routes.draw do
-  resources :user
+  # resources :user
+  get 'u', to: 'users#show'
 end
