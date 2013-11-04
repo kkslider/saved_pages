@@ -4,6 +4,13 @@ class SessionsController < ApplicationController
       params[:user][:email],
       params[:user][:password] 
     )
+    
+    if user
+      login_user!(user)
+      # redirect/render
+    else
+      # redirect/render
+    end
   end
   
   def destroy
