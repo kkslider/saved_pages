@@ -1,12 +1,12 @@
 <div id="content">
   <header>
-    <h3>Create An Account</h3>
+    <h3>Sign In</h3>
     <h3>or</h3>
-    <a href="<%= new_session_url %>">Sign In</a>
+    <a href="/users/new">Create An Account</a>
   </header>
   
   <section>
-    <form action="<%= users_url %>" method="post">
+    <form action="<%= session_url %>" method="post">
       <input type="hidden" 
              name="authenticity_token"
              value="<%= form_authenticity_token %>">
@@ -16,7 +16,7 @@
       <label for="user_password">Password:</label>
       <input type="password" name="user[password]" id="user_password">
       <br>
-      <input type="submit" value="Create Account">
+      <input type="submit" value="Sign In">
     </form>
   </section>
   

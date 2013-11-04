@@ -9,7 +9,7 @@ module SessionsHelper
   end
   
   def login_user!(user)
-    user.reset_session_token!
+    @current_user = user
     session[:session_token] = user.session_token
   end
   

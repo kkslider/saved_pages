@@ -7,8 +7,10 @@ class SessionsController < ApplicationController
     
     if user
       login_user!(user)
+      render :json => user
       # redirect/render
     else
+      render :json => user.errors.full_messages, status: 422
       # redirect/render
     end
   end
