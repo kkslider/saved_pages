@@ -4,7 +4,7 @@ window.BriskPaper = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    // alert('Hello from Backbone!');
   }
 };
 
