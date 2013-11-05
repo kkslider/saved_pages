@@ -11,3 +11,6 @@ Bookmark.create!(user_id: 1, url: "www.ebay.com", title: "eBay", summary: "summa
 Favorite.create!(user_id: 1, bookmark_id: 1)
 Favorite.create!(user_id: 1, bookmark_id: 2)
 Favorite.create!(user_id: 1, bookmark_id: 3)
+
+Archive.create!(user_id: 1, bookmark_id: 1)
+Archive.create!(user_id: 1, bookmark_id: 2)
