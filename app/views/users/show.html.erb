@@ -14,13 +14,14 @@
 
 <div id="content">
   <ul>
+    <li><p>Unread</p></li>
     <% @bookmarks.each do |bookmark| %>
     <li>
-      <div class="bookmark">
+      <div class="bookmark" data-bookmark-id="<%= bookmark.id %>">
         <p><%= bookmark.title %></p>
-        <a href="<%= %>">Edit</a>
-        <a href="<%= %>">Favorite</a>
-        <a href="<%= %>">Archive</a>
+        <a href="<%= edit_bookmark_url(bookmark.id) %>">Edit</a>
+        <!-- <a href="<%= %>">Favorite</a> -->
+        <!-- <a href="<%= %>">Archive</a> -->
         <a href="<%= %>">Delete</a>
       </div>
     </li>
