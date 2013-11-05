@@ -16,5 +16,12 @@ class Bookmark < ActiveRecord::Base
   :primary_key => :id
   )
   
+  has_many(
+  :archives,
+  :class_name => "Archive",
+  :foreign_key => :bookmark_id,
+  :primary_key => :id
+  )
+  
   
 end

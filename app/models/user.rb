@@ -39,6 +39,14 @@ class User < ActiveRecord::Base
   
   has_many :liked_bookmarks, :through => :favorites, :source => :bookmark
   
+  has_many(
+  :archives,
+  :class_name => "Archive",
+  :foreign_key => :user_id,
+  :primary_key => :id
+  )
+  
+  has_many :archived_bookmarks, :through => :archives, :source => :bookmark
   
   
   def password=(password)

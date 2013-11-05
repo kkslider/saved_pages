@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(:version => 20131105022426) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "archives", ["bookmark_id", "user_id"], :name => "index_archives_on_bookmark_id_and_user_id", :unique => true
   add_index "archives", ["bookmark_id"], :name => "index_archives_on_bookmark_id"
-  add_index "archives", ["user_id", "bookmark_id"], :name => "index_archives_on_user_id_and_bookmark_id", :unique => true
   add_index "archives", ["user_id"], :name => "index_archives_on_user_id"
 
   create_table "bookmarks", :force => true do |t|

@@ -9,6 +9,6 @@ class CreateArchives < ActiveRecord::Migration
     
     add_index(:archives, :user_id)
     add_index(:archives, :bookmark_id)
-    add_index(:archives, [:user_id, :bookmark_id], unique: true)
+    add_index(:archives, [:bookmark_id, :user_id], unique: true)
   end
 end
