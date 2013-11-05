@@ -1,0 +1,28 @@
+<header>
+  <nav>
+    <h3>Unread</h3>
+  </nav>
+</header>
+
+<div id="sidebar">
+  <h3>Your Articles</h3>
+  <ul>
+    <li>Unread</li>
+    <li>Liked</li>
+    <li>Archive</li>
+  </ul>
+  <br>
+  <h3>Discover</h3>
+  <ul>
+    <li>How to Save</li>
+  </ul>
+</div>
+
+<div id="content">
+  <ul>
+    <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark.title %></li>
+    <% end %>
+  </ul>
+</div>
+

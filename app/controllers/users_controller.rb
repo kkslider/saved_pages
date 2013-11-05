@@ -7,4 +7,9 @@ class UsersController < ApplicationController
       render :json => @user.errors.full_messages, status: 422
     end
   end
+  
+  def show
+    @bookmarks = current_user.bookmarks
+    render :show
+  end
 end
