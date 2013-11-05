@@ -1,5 +1,9 @@
 <ul>
   <% @liked_bookmarks.each do |liked_bookmark| %>
-  <li><%= liked_bookmark.title %></li>
+  <li>
+    <div class="liked">
+      <p><%= liked_bookmark.title %></p>
+    </div>
+  </li>
   <% end %>
 </ul>

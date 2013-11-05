@@ -1,5 +1,5 @@
 class Bookmark < ActiveRecord::Base
-  attr_accessible :summary, :title, :url, :user_id
+  attr_accessible :summary, :title, :url, :user_id, :author
   validates :summary, :title, :url, :user_id, presence: true
   
   belongs_to(
