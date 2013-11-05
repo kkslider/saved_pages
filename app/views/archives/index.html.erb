@@ -1,0 +1,9 @@
+<ul>
+  <% @archived_bookmarks.each do |archived_bookmark| %>
+  <li>
+    <div class="archived">
+      <p><%= archived_bookmark.title %></p>
+    </div>
+  </li>
+  <% end %>
+</ul>
