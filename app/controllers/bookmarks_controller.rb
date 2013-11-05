@@ -10,6 +10,11 @@ class BookmarksController < ApplicationController
     end
   end
   
+  def show
+    @bookmark = Bookmark.find(params[:id])
+    render :json => @bookmark
+  end
+  
   def edit
     @bookmark = Bookmark.find(params[:id])
     render :edit

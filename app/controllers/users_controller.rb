@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
   
   def show
-    @bookmarks = current_user.bookmarks
-    render :show
+    @bookmarks = current_user.bookmarks.where(is_archived: false)
+    # render :show
+    render :json => @bookmarks
   end
 end

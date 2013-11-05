@@ -4,7 +4,7 @@ SavedPages::Application.routes.draw do
   
   resource :session, :only => [:new, :create]
   
-  resources :bookmarks, :only => [:new, :create, :edit, :update, :destroy]
+  resources :bookmarks, :only => [:new, :create, :edit, :update, :destroy, :show]
   get 'archive', to: 'bookmarks#archive'
   get 'liked', to: 'bookmarks#like'
   

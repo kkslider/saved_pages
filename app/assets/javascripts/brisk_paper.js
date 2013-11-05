@@ -4,7 +4,8 @@ window.SavedPages = {
   Views: {},
   Routers: {},
   initialize: function() {
-    // alert('Hello from Backbone!');
+    SavedPages.bookmarks = new SavedPages.Collections.Bookmarks();
+    
   }
 };
 
