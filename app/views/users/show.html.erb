@@ -20,7 +20,7 @@
       <div class="bookmark" data-bookmark-id="<%= bookmark.id %>">
         <p><%= bookmark.title %></p>
         <%= link_to("Edit", edit_bookmark_url(bookmark.id), :method => :get)%>
-        <!-- <%= link_to("Favorite", favorites_url, :method => :post })%> -->
+        <!-- <%= link_to("Favorite", favorites_url, :method => :post )%> -->
         <!-- <a href="<%= %>">Favorite</a> -->
         <!-- <a href="<%= %>">Archive</a> -->
         <%= link_to("Delete", bookmark_url(bookmark.id), :method => :delete) %>

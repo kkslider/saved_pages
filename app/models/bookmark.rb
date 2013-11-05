@@ -1,6 +1,10 @@
 class Bookmark < ActiveRecord::Base
-  attr_accessible :summary, :title, :url, :user_id, :author
-  validates :summary, :title, :url, :user_id, presence: true
+  attr_accessible :summary, :title, :url, :user_id, :author, :is_favorited
+  validates :summary, :title, :url, :user_id, :is_favorited, presence: true
+  
+  def is_favorited?
+    self.is_favorited
+  end
   
   belongs_to(
   :user,
