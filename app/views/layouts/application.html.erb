@@ -11,8 +11,23 @@
   <% if current_user %>
   <%= current_user.email %>
   <% end %>
+  
+  <div id="sidebar">
+    <h3>Your Articles</h3>
+    <ul>
+      <li>Unread</li>
+      <li>Liked</li>
+      <li>Archive</li>
+    </ul>
+    <br>
+    <h3>Discover</h3>
+    <ul>
+      <li>How to Save</li>
+    </ul>
+  </div>
 
-<%= yield %>
+  <div id="content"></div>
+<!-- <%= yield %> -->
 
 </body>
 </html>
