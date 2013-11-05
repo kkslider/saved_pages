@@ -1,0 +1,23 @@
+<form action="<%= bookmarks_url %>" method="post">
+  <input type="hidden" 
+         name="authenticity_token" 
+        value="<%= form_authenticity_token %>">
+  
+  <label for="bookmark_url"></label>
+  <input type="text" name="bookmark[url]" id="bookmark_url">
+  <br>
+  
+  <label for="bookmark_title"></label>
+  <input type="text" name="bookmark[title]" id="bookmark_title">
+  <br>
+  
+  <label for="bookmark_summary"></label>
+  <input type="text" name="bookmark[summary]" id="bookmark_summary">
+  <br>
+  
+  <label for="bookmark_author"></label>
+  <input type="text" name="bookmark[author]" id="bookmark_author">
+  <br>
+  
+  <input type="submit" value="Create bookmark">
+</form>
