@@ -1,9 +1,3 @@
-<header>
-  <nav>
-    <h3>Unread</h3>
-  </nav>
-</header>
-
 <div id="sidebar">
   <h3>Your Articles</h3>
   <ul>
@@ -21,7 +15,15 @@
 <div id="content">
   <ul>
     <% @bookmarks.each do |bookmark| %>
-    <li><%= bookmark.title %></li>
+    <li>
+      <div class="bookmark">
+        <p><%= bookmark.title %></p>
+        <a href="<%= %>">Edit</a>
+        <a href="<%= %>">Favorite</a>
+        <a href="<%= %>">Archive</a>
+        <a href="<%= %>">Delete</a>
+      </div>
+    </li>
     <% end %>
   </ul>
 </div>

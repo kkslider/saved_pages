@@ -1,21 +1,22 @@
+<h3>Create New Bookmark</h3>
 <form action="<%= bookmarks_url %>" method="post">
   <input type="hidden" 
          name="authenticity_token" 
         value="<%= form_authenticity_token %>">
   
-  <label for="bookmark_url"></label>
+  <label for="bookmark_url">URL</label>
   <input type="text" name="bookmark[url]" id="bookmark_url">
   <br>
   
-  <label for="bookmark_title"></label>
+  <label for="bookmark_title">Title</label>
   <input type="text" name="bookmark[title]" id="bookmark_title">
   <br>
   
-  <label for="bookmark_summary"></label>
+  <label for="bookmark_summary">Summary</label>
   <input type="text" name="bookmark[summary]" id="bookmark_summary">
   <br>
   
-  <label for="bookmark_author"></label>
+  <label for="bookmark_author">Author</label>
   <input type="text" name="bookmark[author]" id="bookmark_author">
   <br>
   

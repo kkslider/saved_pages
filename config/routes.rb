@@ -4,7 +4,7 @@ SavedPages::Application.routes.draw do
   
   resource :session, :only => [:new, :create]
   
-  resources :bookmarks, :only => [:new, :create]
+  resources :bookmarks, :only => [:new, :create, :edit, :update]
   
   get 'archive', to: 'archives#index'
   
