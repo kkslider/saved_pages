@@ -4,6 +4,7 @@ window.SavedPages = {
   Views: {},
   Routers: {},
   initialize: function() {
+    // savedpages.store.bookmarks
     SavedPages.bookmarks = new SavedPages.Collections.Bookmarks();
     
     SavedPages.bookmarks.fetch({

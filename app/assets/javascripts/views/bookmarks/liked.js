@@ -1,5 +1,5 @@
-SavedPages.Views.Unread = Backbone.View.extend({
-  template: JST["users/unread"],
+SavedPages.Views.Liked = Backbone.View.extend({
+  template: JST["bookmarks/liked"],
   
   render: function() {
     var renderedContent = this.template({
@@ -9,5 +9,4 @@ SavedPages.Views.Unread = Backbone.View.extend({
     this.$el.html(renderedContent);
     return this;
   }
-  
 });
