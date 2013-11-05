@@ -11,18 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131105192739) do
-
-  create_table "archives", :force => true do |t|
-    t.integer  "user_id",     :null => false
-    t.integer  "bookmark_id", :null => false
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "archives", ["bookmark_id", "user_id"], :name => "index_archives_on_bookmark_id_and_user_id", :unique => true
-  add_index "archives", ["bookmark_id"], :name => "index_archives_on_bookmark_id"
-  add_index "archives", ["user_id"], :name => "index_archives_on_user_id"
+ActiveRecord::Schema.define(:version => 20131105192949) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -33,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20131105192739) do
     t.datetime "updated_at",                      :null => false
     t.string   "author"
     t.boolean  "is_favorited", :default => false, :null => false
+    t.boolean  "is_archived",  :default => false, :null => false
   end
 
   add_index "bookmarks", ["user_id"], :name => "index_bookmarks_on_user_id"
