@@ -9,7 +9,7 @@ SavedPages::Application.routes.draw do
   get 'archive', to: 'archives#index'
   
   get 'liked', to: 'favorites#index'
-  # resources :favorites, :only => [:create]
+  resources :favorites, :only => [:create]
   
   root :to => "root#root"
 end

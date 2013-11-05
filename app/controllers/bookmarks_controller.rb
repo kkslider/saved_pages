@@ -24,4 +24,11 @@ class BookmarksController < ApplicationController
       render :json => @bookmark.errors.full_messages, status: 422
     end
   end
+  
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    
+    redirect_to u_url
+  end
 end
