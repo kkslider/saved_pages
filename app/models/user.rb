@@ -17,13 +17,6 @@ class User < ActiveRecord::Base
   )
   
   has_many(
-  :favorites,
-  :class_name => "Favorite",
-  :foreign_key => :user_id,
-  :primary_key => :id
-  )
-  
-  has_many(
   :friends,
   :class_name => "Friend",
   :foreign_key => :user_id,
@@ -37,16 +30,15 @@ class User < ActiveRecord::Base
   :primary_key => :id
   )
   
-  has_many :liked_bookmarks, :through => :favorites, :source => :bookmark
+  def liked_bookmarks
+    self.bookmarks.where(is_favorited: true)
+  end
   
-  has_many(
-  :archives,
-  :class_name => "Archive",
-  :foreign_key => :user_id,
-  :primary_key => :id
-  )
+  def archived_bookmarks
+    self.bookmarks.where(is_archived: true)
+  end
   
-  has_many :archived_bookmarks, :through => :archives, :source => :bookmark
+  
   
   
   def password=(password)

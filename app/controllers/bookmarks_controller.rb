@@ -31,4 +31,15 @@ class BookmarksController < ApplicationController
     
     redirect_to u_url
   end
+  
+  def archive
+    @archived_bookmarks = current_user.archived_bookmarks
+    render :archive
+  end
+  
+  def like
+    @liked_bookmarks = current_user.liked_bookmarks
+    render :like
+  end
+  
 end
