@@ -6,6 +6,7 @@ SavedPages.AppRouter = Backbone.Router.extend({
   routes: {
     "u": "showUnread",
     "liked": "showLiked",
+    "archive": "showArchive",
   },
   
   showUnread: function() {
@@ -22,6 +23,14 @@ SavedPages.AppRouter = Backbone.Router.extend({
     });
     
     this._swapView(likedView);
+  },
+  
+  showArchive: function() {
+    var archiveView = new SavedPages.Views.Archive({
+      collection: new Bookmarks(SavedPages.bookmarks.where({ is_archied: true }))
+    });
+    
+    this._swapView(archiveView);
   },
   
   _swapView: function(newView) {
