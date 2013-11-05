@@ -1,4 +1,4 @@
-window.BriskPaper = {
+window.SavedPages = {
   Models: {},
   Collections: {},
   Views: {},
@@ -9,5 +9,5 @@ window.BriskPaper = {
 };
 
 $(document).ready(function(){
-  BriskPaper.initialize();
+  SavedPages.initialize();
 });

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-BriskPaper::Application.load_tasks
+SavedPages::Application.load_tasks

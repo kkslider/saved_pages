@@ -22,6 +22,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rename'
 end
 
 gem 'backbone-on-rails'

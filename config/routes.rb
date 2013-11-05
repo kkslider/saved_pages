@@ -1,4 +1,4 @@
-BriskPaper::Application.routes.draw do
+SavedPages::Application.routes.draw do
   # resources :user
   get 'u', to: 'users#show'
   resources :users, :only => [:new, :create]
