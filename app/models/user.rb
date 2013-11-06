@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password
   attr_reader :password
-  validates :email, :password, :session_token, presence: true
+  validates :email, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, on: :create
+  validates :password, presence: true, on: :create
   
   before_validation(on: :create) do
     self.reset_session_token! if !self.session_token

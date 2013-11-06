@@ -8,8 +8,4 @@ class UsersController < ApplicationController
     end
   end
   
-  def show
-    @bookmarks = current_user.bookmarks
-    render :json => @bookmarks
-  end
 end

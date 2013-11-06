@@ -15,7 +15,7 @@
 //= require jquery.serializeJSON
 //= require underscore
 //= require backbone
-//= require brisk_paper
+//= require saved_pages
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

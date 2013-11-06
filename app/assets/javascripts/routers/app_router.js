@@ -11,13 +11,18 @@ SavedPages.AppRouter = Backbone.Router.extend({
   },
   
   newUser: function() {
-    var 
+    var newUserView = new SavedPages.Views.NewUser();
+    this._swapView(newUserView);
   },
   
   showUnread: function() {
     var unreadView = new SavedPages.Views.Unread({
       collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
     });      
+    // 
+    // if ($("#sidebar").length === 0) {
+    //   showSidebar();
+    // }
     
     this._swapView(unreadView);
   },
@@ -38,6 +43,14 @@ SavedPages.AppRouter = Backbone.Router.extend({
     this._swapView(archiveView);
   },
   
+  // showSidebar: function() {
+  //   var sidebarView = new SavedPages.Views.Sidebar();
+  //   
+  //   
+  //   this.$sidebarEl.html(sidebarView).before($("#content"));
+  //   // this.$sidebarEl.html(sidebarView);
+  // },
+  // 
   _swapView: function(newView) {
     this._currentView && this._currentView.remove();
     this._currentView = newView;

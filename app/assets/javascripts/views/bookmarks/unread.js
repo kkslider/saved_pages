@@ -1,5 +1,5 @@
 SavedPages.Views.Unread = Backbone.View.extend({
-  template: JST["users/unread"],
+  template: JST["bookmarks/unread"],
   
   render: function() {
     var renderedContent = this.template({

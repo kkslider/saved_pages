@@ -10,24 +10,10 @@
 
   <% if current_user %>
   <%= current_user.email %>
+  <%= button_to("Log out", session_url, method: :delete) %>
   <% end %>
   
-  <div id="sidebar">
-    <h3>Your Articles</h3>
-    <ul>
-      <li><a href="#/u">Unread</a></li>
-      <li><a href="#/liked">Liked</a></li>
-      <li><a href="#/archive">Archive</a></li>
-    </ul>
-    <br>
-    <h3>Discover</h3>
-    <ul>
-      <li>How to Save</li>
-    </ul>
-  </div>
-
-  <div id="content"></div>
-  <%= yield %>
+  <div id="content"><%= yield %></div>
 
 </body>
 </html>
