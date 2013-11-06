@@ -30,8 +30,11 @@ SavedPages.AppRouter = Backbone.Router.extend({
     SavedPages.bookmarks.fetch({
       success: function() {
         // alert('hi');
+        var unreadBookmarks = new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
+        unreadBookmarks.current_user = SavedPages.bookmarks.current_user
         var unreadView = new SavedPages.Views.Unread({
-          collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
+          // collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false })),
+          collection: unreadBookmarks
         });      
         if ($("#sidebar").is(':empty')) {
           // loadSidebar();
@@ -63,12 +66,6 @@ SavedPages.AppRouter = Backbone.Router.extend({
         that._swapView(likedView);
       }
     });
-    
-    // var likedView = new SavedPages.Views.Liked({
-    //   collection: new Bookmarks(SavedPages.bookmarks.where({ is_favorited: true }))
-    // });
-    
-    // this._swapView(likedView);
   },
   
   showArchive: function() {
@@ -89,12 +86,6 @@ SavedPages.AppRouter = Backbone.Router.extend({
         that._swapView(archiveView);
       }
     });
-    
-    // var archiveView = new SavedPages.Views.Archive({
-    //   collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: true }))
-    // });
-    // 
-    // this._swapView(archiveView);
   },
   
   newSession: function() {
@@ -106,14 +97,6 @@ SavedPages.AppRouter = Backbone.Router.extend({
     this._swapView(newSessionView);
   },
   
-  // showSidebar: function() {
-  //   var sidebarView = new SavedPages.Views.Sidebar();
-  //   
-  //   
-  //   this.$sidebarEl.html(sidebarView).before($("#content"));
-  //   // this.$sidebarEl.html(sidebarView);
-  // },
-  // 
   _swapView: function(newView) {
     this._currentView && this._currentView.remove();
     this._currentView = newView;
