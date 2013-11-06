@@ -27,15 +27,14 @@ SavedPages.AppRouter = Backbone.Router.extend({
   
   showUnread: function() {
     var that = this;
+    
     SavedPages.bookmarks.fetch({
-      success: function() {
+      success: function(collection, model, options) {
         // alert('hi');
-        var unreadBookmarks = new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
-        unreadBookmarks.current_user = SavedPages.bookmarks.current_user
         var unreadView = new SavedPages.Views.Unread({
-          // collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false })),
-          collection: unreadBookmarks
-        });      
+          collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
+        });
+        
         if ($("#sidebar").is(':empty')) {
           // loadSidebar();
           var sidebarView = new SavedPages.Views.Sidebar();

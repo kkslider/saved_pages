@@ -44,8 +44,7 @@ class BookmarksController < ApplicationController
     # return if !current_user
     @bookmarks = current_user.bookmarks
  
-    # render :json => @bookmarks
-    render :json => { :bookmarks => @bookmarks, :current_user => current_user }
+    render :json => @bookmarks
   end
   
   def archive

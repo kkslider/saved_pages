@@ -5,15 +5,14 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script type="application/json" id="bootstrapped_user_json">
+    { "current_user": <%= current_user.to_json.html_safe %> }
+  </script>
 </head>
 <body>
 
-  <% if current_user %>
-  <%= current_user.email %>
-  <%= button_to("Log out", session_url, method: :delete) %>
-  <% end %>
-
   <div id="container">
+    <div id="user"></div>
     <div id="sidebar"></div>
     <div id="content"><%= yield %></div>
   </div>

@@ -10,10 +10,13 @@ window.SavedPages = {
       $rootEl: $("#content"),
       $sidebarEl: $("#sidebar")
     });
+    SavedPages.current_user = JSON.parse($("#bootstrapped_user_json").html()).current_user.email;
+    alert(JSON.stringify(SavedPages.current_user));
     Backbone.history.start();
   }
 };
 
+
 $(document).ready(function(){
-  SavedPages.initialize();
+  SavedPages.initialize(); 
 });

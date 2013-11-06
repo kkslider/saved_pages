@@ -3,8 +3,7 @@ SavedPages.Views.Unread = Backbone.View.extend({
   
   render: function() {
     var renderedContent = this.template({
-      bookmarks: this.collection,
-      user: this.collection.current_user
+      bookmarks: this.collection
     });
     // $("#sidebar").html("<span>hellooo</span>");
     this.$el.html(renderedContent);

@@ -18,9 +18,11 @@ SavedPages.Views.NewSession = Backbone.View.extend({
     var attrs = $(event.target.form).serializeJSON();
     
     this.model.set(attrs);
-    
+    var that = this;
     this.model.save({}, {
       success: function() {
+        SavedPages.current_user = that.model.get("user").email
+        $("#user").html(SavedPages.current_user);
         Backbone.history.navigate("/u", { trigger: true });
       }
     });
