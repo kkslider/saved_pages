@@ -8,6 +8,7 @@ SavedPages.AppRouter = Backbone.Router.extend({
     "users/new": "newUser",
     "liked": "showLiked",
     "archive": "showArchive",
+    "session/new": "newSession",
   },
   
   newUser: function() {
@@ -16,21 +17,27 @@ SavedPages.AppRouter = Backbone.Router.extend({
   },
   
   showUnread: function() {
+    var that = this;
     SavedPages.bookmarks.fetch({
       success: function() {
-        alert('hi');
+        // alert('hi');
+        var unreadView = new SavedPages.Views.Unread({
+          collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
+        });      
+        
+        that._swapView(unreadView);
       }
     });
     
-    var unreadView = new SavedPages.Views.Unread({
-      collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
-    });      
+    // var unreadView = new SavedPages.Views.Unread({
+    //   collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
+    // });      
     // 
     // if ($("#sidebar").length === 0) {
     //   showSidebar();
     // }
     
-    this._swapView(unreadView);
+    
   },
   
   showLiked: function() {
@@ -43,10 +50,19 @@ SavedPages.AppRouter = Backbone.Router.extend({
   
   showArchive: function() {
     var archiveView = new SavedPages.Views.Archive({
-      collection: new Bookmarks(SavedPages.bookmarks.where({ is_archied: true }))
+      collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: true }))
     });
     
     this._swapView(archiveView);
+  },
+  
+  newSession: function() {
+    var newSession = new SavedPages.Models.Session();
+    var newSessionView = new SavedPages.Views.NewSession({
+      model: newSession
+    });
+    
+    this._swapView(newSessionView);
   },
   
   // showSidebar: function() {
