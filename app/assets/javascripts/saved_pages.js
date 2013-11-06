@@ -6,16 +6,20 @@ window.SavedPages = {
   initialize: function() {
     // savedpages.store.bookmarks
     SavedPages.bookmarks = new SavedPages.Collections.Bookmarks();
-    
-    SavedPages.bookmarks.fetch({
-      success: function() {
-        console.log("success!");
-        new SavedPages.AppRouter({
-          $rootEl: $("#content")
-        });
-        Backbone.history.start();
-      }
+    new SavedPages.AppRouter({
+      $rootEl: $("#content")
     });
+    Backbone.history.start();
+    // SavedPages.bookmarks.fetch({
+    //   success: function() {
+    //     alert('hi');
+    //     // console.log("success!");
+    //     new SavedPages.AppRouter({
+    //       $rootEl: $("#content")
+    //     });
+    //     Backbone.history.start();
+    //   }
+    // });
   }
 };
 

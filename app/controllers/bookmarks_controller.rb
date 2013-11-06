@@ -41,6 +41,7 @@ class BookmarksController < ApplicationController
   end
   
   def unread
+    # return if !current_user
     @bookmarks = current_user.bookmarks
     render :json => @bookmarks
   end

@@ -16,6 +16,12 @@ SavedPages.AppRouter = Backbone.Router.extend({
   },
   
   showUnread: function() {
+    SavedPages.bookmarks.fetch({
+      success: function() {
+        alert('hi');
+      }
+    });
+    
     var unreadView = new SavedPages.Views.Unread({
       collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
     });      

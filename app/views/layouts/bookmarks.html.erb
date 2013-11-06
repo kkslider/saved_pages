@@ -5,6 +5,10 @@
   <%= stylesheet_link_tag    "bookmarks", :media => "all" %>
   <%= javascript_include_tag "bookmarks" %>
   <%= csrf_meta_tags %>
+
+  $(document).ready(function(){
+    SavedPages.initialize();
+  });
 </head>
 <body>
 
