@@ -7,7 +7,8 @@ window.SavedPages = {
     // savedpages.store.bookmarks
     SavedPages.bookmarks = new SavedPages.Collections.Bookmarks();
     new SavedPages.AppRouter({
-      $rootEl: $("#content")
+      $rootEl: $("#content"),
+      $sidebarEl: $("#sidebar")
     });
     Backbone.history.start();
   }

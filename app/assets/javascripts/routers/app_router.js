@@ -1,6 +1,7 @@
 SavedPages.AppRouter = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
+    this.$sidebarEl = options.$sidebarEl;
   },
   
   routes: {
@@ -10,8 +11,14 @@ SavedPages.AppRouter = Backbone.Router.extend({
     "archive": "showArchive",
     "session/new": "newSession",
   },
-  
-  
+  // 
+  // var loadSidebar: function() {
+  //   var sidebarView = new SavedPages.Views.Sidebar();
+  //     
+  //     
+  //   this.$sidebarEl.html(sidebarView.render().$el);
+  //   // this.$sidebarEl.html(sidebarView);
+  // },
   
   newUser: function() {
     var newUserView = new SavedPages.Views.NewUser();
@@ -27,34 +34,67 @@ SavedPages.AppRouter = Backbone.Router.extend({
           collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
         });      
         if ($("#sidebar").is(':empty')) {
-          $("#sidebar").html("<span>hellooo</span>"); 
+          // loadSidebar();
+          var sidebarView = new SavedPages.Views.Sidebar();
+      
+          that.$sidebarEl.html(sidebarView.render().$el);
         }
         
         that._swapView(unreadView);
       }
     });
-    
-    // if ($("#sidebar").length === 0) {
-    //   showSidebar();
-    // }
-    
-    
   },
   
   showLiked: function() {
-    var likedView = new SavedPages.Views.Liked({
-      collection: new Bookmarks(SavedPages.bookmarks.where({ is_favorited: true }))
+    var that = this;
+    SavedPages.bookmarks.fetch({
+      success: function() {
+        // alert('hi');
+        var likedView = new SavedPages.Views.Liked({
+          collection: new Bookmarks(SavedPages.bookmarks.where({ is_favorited: true }))
+        });
+        if ($("#sidebar").is(':empty')) {
+          // loadSidebar();
+          var sidebarView = new SavedPages.Views.Sidebar();
+      
+          that.$sidebarEl.html(sidebarView.render().$el);
+        }
+        
+        that._swapView(likedView);
+      }
     });
     
-    this._swapView(likedView);
+    // var likedView = new SavedPages.Views.Liked({
+    //   collection: new Bookmarks(SavedPages.bookmarks.where({ is_favorited: true }))
+    // });
+    
+    // this._swapView(likedView);
   },
   
   showArchive: function() {
-    var archiveView = new SavedPages.Views.Archive({
-      collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: true }))
+    var that = this;
+    SavedPages.bookmarks.fetch({
+      success: function() {
+        // alert('hi');
+        var archiveView = new SavedPages.Views.Archive({
+          collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: true }))
+        });
+        if ($("#sidebar").is(':empty')) {
+          // loadSidebar();
+          var sidebarView = new SavedPages.Views.Sidebar();
+      
+          that.$sidebarEl.html(sidebarView.render().$el);
+        }
+        
+        that._swapView(archiveView);
+      }
     });
     
-    this._swapView(archiveView);
+    // var archiveView = new SavedPages.Views.Archive({
+    //   collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: true }))
+    // });
+    // 
+    // this._swapView(archiveView);
   },
   
   newSession: function() {
