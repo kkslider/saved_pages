@@ -11,6 +11,8 @@ SavedPages.AppRouter = Backbone.Router.extend({
     "session/new": "newSession",
   },
   
+  
+  
   newUser: function() {
     var newUserView = new SavedPages.Views.NewUser();
     this._swapView(newUserView);
@@ -24,15 +26,14 @@ SavedPages.AppRouter = Backbone.Router.extend({
         var unreadView = new SavedPages.Views.Unread({
           collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
         });      
+        if ($("#sidebar").is(':empty')) {
+          $("#sidebar").html("<span>hellooo</span>"); 
+        }
         
         that._swapView(unreadView);
       }
     });
     
-    // var unreadView = new SavedPages.Views.Unread({
-    //   collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
-    // });      
-    // 
     // if ($("#sidebar").length === 0) {
     //   showSidebar();
     // }

@@ -10,16 +10,6 @@ window.SavedPages = {
       $rootEl: $("#content")
     });
     Backbone.history.start();
-    // SavedPages.bookmarks.fetch({
-    //   success: function() {
-    //     alert('hi');
-    //     // console.log("success!");
-    //     new SavedPages.AppRouter({
-    //       $rootEl: $("#content")
-    //     });
-    //     Backbone.history.start();
-    //   }
-    // });
   }
 };
 

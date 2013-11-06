@@ -12,9 +12,11 @@
   <%= current_user.email %>
   <%= button_to("Log out", session_url, method: :delete) %>
   <% end %>
-  
-  
-  <div id="content"><%= yield %></div>
 
+  <div id="container">
+    <div id="sidebar"></div>
+    <div id="content"><%= yield %></div>
+  </div>
+  
 </body>
 </html>
