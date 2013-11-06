@@ -9,7 +9,7 @@
     <form action="<%= users_url %>" method="post">
       <input type="hidden" 
              name="authenticity_token"
-             value="<%= form_authenticity_token %>">
+            value="<%= form_authenticity_token %>">
       <label for="user_email">Email:</label>
       <input type="text" name="user[email]" id="user_email">
       <br>
@@ -19,5 +19,4 @@
       <input type="submit" value="Create Account">
     </form>
   </section>
-  
 </div>

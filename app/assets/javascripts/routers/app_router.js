@@ -5,8 +5,13 @@ SavedPages.AppRouter = Backbone.Router.extend({
   
   routes: {
     "u": "showUnread",
+    "users/new": "newUser",
     "liked": "showLiked",
     "archive": "showArchive",
+  },
+  
+  newUser: function() {
+    var 
   },
   
   showUnread: function() {
