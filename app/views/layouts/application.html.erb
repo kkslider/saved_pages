@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>SavedPages</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -11,10 +11,14 @@
 </head>
 <body>
 
-  <div id="container">
-    <div id="user"></div>
-    <div id="sidebar"></div>
-    <div id="content"><%= yield %></div>
+  <div class="container">
+    <div class="row">
+    
+      <div id="sidebar" class="col-md-4"></div>
+      <div id="content" class="col-md-8">
+        <%= yield %>
+      </div>
+    </div>
   </div>
   
 </body>
