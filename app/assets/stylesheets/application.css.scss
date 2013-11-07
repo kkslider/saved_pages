@@ -93,6 +93,17 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10 { height: 100%;}
   border-right-width: 1px;
 }
 
+#side_column_main {
+  background-color: #222222;
+  height: 470px;
+}
+
+#side_column_nav {
+  background-color: #1b1b1b;
+  height: 400px;
+//  height: 50%;
+}
+
 #content {
   font-size: 19px;
 //  -webkit-font-smoothing: antialiased;

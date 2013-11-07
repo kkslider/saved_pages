@@ -37,9 +37,10 @@ SavedPages.AppRouter = Backbone.Router.extend({
         
         if ($("#sidebar").is(':empty')) {
           // loadSidebar();
-          var sidebarView = new SavedPages.Views.Sidebar();
-      
-          that.$sidebarEl.html(sidebarView.render().$el);
+          that.sidebarView = new SavedPages.Views.Sidebar();
+          // var sidebarView = new SavedPages.Views.Sidebar();
+          that.sidebarView.show();
+          that.$sidebarEl.html(that.sidebarView.render().$el);
         }
         
         that._swapView(unreadView);
