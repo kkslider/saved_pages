@@ -13,6 +13,9 @@
  *= require_self
  *= require_tree .
  */
+img {
+  width: 100%;
+}
 
 body {
   font-family: "TisaPro.";
@@ -25,6 +28,8 @@ body {
 
 .side_title {
   color: #5a5a5a;
+  font-size: 14px;
+  margin-left: 20px;
 }
 
 .side_item, span.glyphicon {
@@ -32,12 +37,19 @@ body {
 }
 
 span.glyphicon {
-  margin-right: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
+
+.side_row {
+  margin: 15px 0px 15px 0px;
+}
+
+
 
 li {
   list-style: none;
-  width: auto;
+//  width: auto;
 }
 
 
