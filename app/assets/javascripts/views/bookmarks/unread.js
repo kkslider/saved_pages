@@ -8,6 +8,6 @@ SavedPages.Views.Unread = Backbone.View.extend({
     // $("#sidebar").html("<span>hellooo</span>");
     this.$el.html(renderedContent);
     return this;
-  }
+  },
   
 });

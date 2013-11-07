@@ -3,9 +3,19 @@
   <% bookmarks.each(function(bookmark) { %>
   <li>
     <div class="bookmark" data-bookmark-id="<%= bookmark.escape("id") %>">
-      <p><%= bookmark.escape("title") %></p>
+      <span><%= bookmark.escape("title") %></span>
     </div>
   </li>
   <% }) %>
   <li><%= SavedPages.current_user %></li>
 </ul>
+
+<script>
+$("#liked_link.side_row").hover(
+  function() {
+    $(this).addClass("makeRed");
+  }, function() {
+    $(this).removeClass("makeRed");
+  }
+);
+</script>

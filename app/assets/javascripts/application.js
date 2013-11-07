@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.serializeJSON
+//= require custom
 //= require underscore
 //= require backbone
 //= require saved_pages
@@ -22,3 +23,12 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+$("#liked_link").hover(
+  function() {
+    $(this).addClass("makeRed");
+  }, function() {
+    $(this).removeClass("makeRed");
+  }
+);
+
+
