@@ -13,3 +13,80 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  font-family: "TisaPro.";
+  font-size: 19px;
+}
+
+#sidebar {
+  font-family: "SourceSansPro";
+}
+
+.side_title {
+  color: #5a5a5a;
+}
+
+.side_item, span.glyphicon {
+  color: #999999;
+}
+
+span.glyphicon {
+  margin-right: 15px;
+}
+
+li {
+  list-style: none;
+  width: auto;
+}
+
+
+
+
+
+
+html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10 { height: 100%;}
+
+
+#sidebar {
+  background-color: #1b1b1b;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@font-face {
+  font-family: 'TisaPro';
+  src: font-url('TisaPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// bold
+@font-face {
+  font-family: 'TisaPro';
+  src: font-url('TisaPro-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// italic
+@font-face {
+  font-family: 'TisaPro';
+  src: font-url('TisaPro-Ita.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aaargh';
+  src: font-url('Aaargh.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansPro';
+  src: font-url('SourceSansPro-Light.otf') format('opentype');
+  font-weight: lighter;
+  font-style: normal;
+}

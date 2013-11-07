@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'TisaPro';
+  src: font-url('TisaPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// bold
+@font-face {
+  font-family: 'TisaPro';
+  src: font-url('TisaPro-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// italic
+@font-face {
+  font-family: 'TisaPro';
+  src: font-url('TisaPro-Ita.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ABeeZee';
+  src: font-url('ABeeZee-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
