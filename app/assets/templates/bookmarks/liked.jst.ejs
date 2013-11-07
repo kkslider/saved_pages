@@ -1,10 +1,6 @@
-<ul>
-  <li><div><p>Liked</p></div></li>
-  <% bookmarks.each(function(bookmark) { %>
-  <li>
-    <div class="bookmark" data-bookmark-id="<%= bookmark.escape("id") %>">
-      <p><%= bookmark.escape("title") %></p>
-    </div>
-  </li>
-  <% }) %>
-</ul>
+<div class="page_type">Liked</div>
+<% bookmarks.each(function(bookmark) { %>
+  <div class="bookmark" data-bookmark-id="<%= bookmark.escape("id") %>">
+    <span><%= bookmark.escape("title") %></span>
+  </div>
+<% }) %>

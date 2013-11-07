@@ -1,14 +1,9 @@
-<ul>
-  <li><div><p>Unread</p></div></li>
-  <% bookmarks.each(function(bookmark) { %>
-  <li>
-    <div class="bookmark" data-bookmark-id="<%= bookmark.escape("id") %>">
-      <span><%= bookmark.escape("title") %></span>
-    </div>
-  </li>
-  <% }) %>
-  <li><%= SavedPages.current_user %></li>
-</ul>
+<div class="page_type">Unread</div>
+<% bookmarks.each(function(bookmark) { %>
+  <div class="bookmark" data-bookmark-id="<%= bookmark.escape("id") %>">
+    <span><%= bookmark.escape("title") %></span>
+  </div>
+<% }) %>
 
 <script>
 $("#liked_link.side_row").hover(
