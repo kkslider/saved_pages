@@ -83,17 +83,19 @@ li {
 }
 
 
-html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10 { height: 100%;}
+html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col-md-3 { height: 100%;}
 
 .row {
   margin-left: 0px;
   margin-right: 0px;
+  height: 100%;
 }
 //div.bookmark {
 //  margin-left: 15px;
 //  margin-right: 15px;
 //}
 
+// to have the entire column be a clickable link
 .bookmark a span {
   position: absolute;
   width: 100%;
@@ -149,10 +151,17 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10 { height: 100%;}
   position: relative;
 //  padding-left: 20px;
   
+//  border-top-style: solid;
+//  border-top-color: #CFD1D1;
+//  border-top-width: 1px;
+}
+
+.bookmark_row {
   border-top-style: solid;
   border-top-color: #CFD1D1;
   border-top-width: 1px;
 }
+
 
 .page_type {
   height: 58px;

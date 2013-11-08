@@ -1,7 +1,7 @@
 SavedPages.Views.Unread = Backbone.View.extend({
   events: {
-    "mouseover div.bookmark": "mouseOverBookmark",
-    "mouseout div.bookmark": "mouseOutBookmark",
+    "mouseover .bookmark_row": "mouseOverBookmark",
+    "mouseout .bookmark_row": "mouseOutBookmark",
   },
   
   template: JST["bookmarks/unread"],
@@ -19,13 +19,14 @@ SavedPages.Views.Unread = Backbone.View.extend({
     $(event.currentTarget).css('background-color', '#fafafa');
     // $(event.currentTarget).find("a").css('color', '#ba0f06');
     $("a", event.currentTarget).css('color', '#ba0f06');
+    $(".options", event.currentTarget).show();
   },
   
   mouseOutBookmark: function(event) {
     $(event.currentTarget).css('background-color', '#ffffff');
     // $(event.currentTarget).find("a").css('color', '#000000');
     $("a", event.currentTarget).css('color', '#000000');
-    
+    $(".options", event.currentTarget).hide();
   }
   
 });

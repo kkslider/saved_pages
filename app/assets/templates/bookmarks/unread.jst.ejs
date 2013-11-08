@@ -1,11 +1,30 @@
 <div class="page_type">Unread</div>
 
   <% bookmarks.each(function(bookmark) { %>
-  <div class="row">
-      <div class="bookmark col-md-8" data-bookmark-id="<%= bookmark.escape("id") %>">
+  <div class="bookmark_row row">
+      <div class="bookmark col-md-9" data-bookmark-id="<%= bookmark.escape("id") %>">
         <a href=<%= bookmark.escape("url") %>><span><%= bookmark.escape("title") %></span></a>
       </div>
-      <div class="bookmark col-md-4">
+      <div class="options bookmark col-md-3">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2 col-md-offset-1">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </div>
+            <div class="col-md-2">
+              <span class="glyphicon glyphicon-heart"></span>
+            </div>  
+            <div class="col-md-2">
+              <span class="glyphicon glyphicon-inbox"></span>
+            </div>  
+            <div class="col-md-2">
+              <span class="glyphicon glyphicon-trash"></span>
+            </div>
+            <div class="col-md-2">
+              <span class="glyphicon glyphicon-share"></span>
+            </div>
+          </div>
+        </div>
       </div>
   </div>
   <% }) %>
@@ -15,11 +34,5 @@
 
 
 <script>
-$("#liked_link.side_row").hover(
-  function() {
-    $(this).addClass("makeRed");
-  }, function() {
-    $(this).removeClass("makeRed");
-  }
-);
+  $(".options").hide();
 </script>

@@ -8,6 +8,6 @@ SavedPages.Views.Sidebar = Backbone.View.extend({
   },
   
   show: function() {
-    alert('hello');
+    // alert('hello');
   }
 });
