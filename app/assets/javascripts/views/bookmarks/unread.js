@@ -3,6 +3,8 @@ SavedPages.Views.Unread = Backbone.View.extend({
     "mouseover .bookmark_row": "mouseOverBookmark",
     "mouseout .bookmark_row": "mouseOutBookmark",
     "click #like_bookmark": "likeBookmark",
+    "click #archive_bookmark": "archiveBookmark",
+    "click #delete_bookmark": "deleteBookmark",
   },
   
   template: JST["bookmarks/unread"],
@@ -40,7 +42,36 @@ SavedPages.Views.Unread = Backbone.View.extend({
     $(event.currentTarget).effect({ effect: "puff", complete: function() {
       that.fadeIn();
     }});
+  },
+  
+  archiveBookmark: function(event) {
+    event.preventDefault();
+    var bookmarkId = $(event.currentTarget).attr("data-bookmark-id");
+    var bookmark = SavedPages.bookmarks.get(bookmarkId);
+    bookmark.archive_this();
     
+    $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", 
+      { direction: "right" });
+  },
+  
+  deleteBookmark: function(event) {
+    event.preventDefault();
+    var response = confirm("Are you sure you want to permanently delete this article?");
+    if (response) {
+      var bookmarkId = $(event.currentTarget).attr("data-bookmark-id");
+      var bookmark = SavedPages.bookmarks.get(bookmarkId);
+      alert(bookmarkId);
+      // alert(bookmark);
+      // bookmark.destroy({
+      //   success: function(model, response) {
+      //     
+      //     $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", { direction: "up" });
+      //     Backbone.history.navigate("/", { trigger: true });
+      //   }
+      // });
+      bookmark.destroy();
+      $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", { direction: "up" });
+    }
   }
   
 });

@@ -24,12 +24,5 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
-$("#liked_link").hover(
-  function() {
-    $(this).addClass("makeRed");
-  }, function() {
-    $(this).removeClass("makeRed");
-  }
-);
 
 

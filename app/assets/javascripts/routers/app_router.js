@@ -10,7 +10,8 @@ SavedPages.AppRouter = Backbone.Router.extend({
     "liked": "showLiked",
     "archive": "showArchive",
     "session/new": "newSession",
-    "bookmarks/:id/edit": "editBookmark"
+    "bookmarks/:id/edit": "editBookmark",
+    // "bookmarks/:id": "destroyBookmark"
   },
   
   newUser: function() {
@@ -110,6 +111,32 @@ SavedPages.AppRouter = Backbone.Router.extend({
       }
     });
   },
+  
+  // destroyBookmark: function(id) {
+  //   var that = this;
+  //   SavedPages.bookmarks.fetch({
+  //     success: function() {
+  //       // alert('hi');
+  //       // var editBookmarkView = new SavedPages.Views.EditBookmark({
+  //       //   model: SavedPages.bookmarks.get(id)
+  //       // });
+  //       if ($("#sidebar").is(':empty')) {
+  //         // loadSidebar();
+  //         var sidebarView = new SavedPages.Views.Sidebar();
+  //     
+  //         that.$sidebarEl.html(sidebarView.render().$el);
+  //       }
+  //       
+  //       // that._swapView(editBookmarkView);
+  //       var bookmark = SavedPages.bookmarks.get(id);
+  //       bookmark.destroy({
+  //         success:function() {
+  //           alert("DESTROYED!");
+  //         }
+  //       });
+  //     }
+  //   });
+  // },
   
   _swapView: function(newView) {
     this._currentView && this._currentView.remove();

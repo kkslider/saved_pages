@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
   layout "bookmarks"
+  # respond_to :json
   
   def create
     @bookmark = Bookmark.new(params[:bookmark])
@@ -14,7 +15,6 @@ class BookmarksController < ApplicationController
   
   def show
     @bookmark = Bookmark.find(params[:id])
-    render :show
     render :json => @bookmark
   end
   
@@ -36,8 +36,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    
-    redirect_to u_url
+    render :json => nil
   end
   
   def unread

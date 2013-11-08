@@ -9,6 +9,13 @@ SavedPages.Models.Bookmark = Backbone.Model.extend({
         // Backbone.history.navigate("/", { trigger: true });
       }
     })
-  }
+  },
+  
+  archive_this: function() {
+    this.get("is_archived") === true ? this.set("is_archived", false) : this.set("is_archived", true);
+    this.save();
+  },
+  
+  
   
 });
