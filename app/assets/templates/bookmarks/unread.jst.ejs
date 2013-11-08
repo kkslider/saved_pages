@@ -2,17 +2,17 @@
 
   <% bookmarks.each(function(bookmark) { %>
   <div class="bookmark_row row">
-      <div class="bookmark col-md-9" data-bookmark-id="<%= bookmark.escape("id") %>">
-        <a href=<%= bookmark.escape("url") %>><span><%= bookmark.escape("title") %></span></a>
+      <div class="bookmark col-md-9" data-bookmark-id=<%= bookmark.escape("id") %>>
+        <a href=<%= bookmark.escape("url") %>><span class="clickable_bookmark"><%= bookmark.escape("title") %></span></a>
       </div>
       <div class="options bookmark col-md-3">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-2 col-md-offset-1">
-              <span class="glyphicon glyphicon-pencil"></span>
+              <a href="#/bookmarks/<%= bookmark.id %>/edit"><span class="glyphicon glyphicon-pencil"></span></a>
             </div>
             <div class="col-md-2">
-              <span class="glyphicon glyphicon-heart"></span>
+              <a href="#/u" id="like_bookmark" data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-heart"></span></a>
             </div>  
             <div class="col-md-2">
               <span class="glyphicon glyphicon-inbox"></span>

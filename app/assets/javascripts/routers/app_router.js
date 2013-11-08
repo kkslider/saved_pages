@@ -10,15 +10,8 @@ SavedPages.AppRouter = Backbone.Router.extend({
     "liked": "showLiked",
     "archive": "showArchive",
     "session/new": "newSession",
+    "bookmarks/:id/edit": "editBookmark"
   },
-  // 
-  // var loadSidebar: function() {
-  //   var sidebarView = new SavedPages.Views.Sidebar();
-  //     
-  //     
-  //   this.$sidebarEl.html(sidebarView.render().$el);
-  //   // this.$sidebarEl.html(sidebarView);
-  // },
   
   newUser: function() {
     var newUserView = new SavedPages.Views.NewUser();
@@ -95,6 +88,27 @@ SavedPages.AppRouter = Backbone.Router.extend({
     });
     
     this._swapView(newSessionView);
+  },
+  
+  editBookmark: function(id) {
+    var that = this;
+    
+    SavedPages.bookmarks.fetch({
+      success: function() {
+        // alert('hi');
+        var editBookmarkView = new SavedPages.Views.EditBookmark({
+          model: SavedPages.bookmarks.get(id)
+        });
+        if ($("#sidebar").is(':empty')) {
+          // loadSidebar();
+          var sidebarView = new SavedPages.Views.Sidebar();
+      
+          that.$sidebarEl.html(sidebarView.render().$el);
+        }
+        
+        that._swapView(editBookmarkView);
+      }
+    });
   },
   
   _swapView: function(newView) {
