@@ -5,8 +5,8 @@ SavedPages.Models.Bookmark = Backbone.Model.extend({
     this.get("is_favorited") === true ? this.set("is_favorited", false) : this.set("is_favorited", true);
     this.save({}, {
       success: function() {
-        alert("nice!");
-        Backbone.history.navigate("/", { trigger: true });
+        // alert("nice!");
+        // Backbone.history.navigate("/", { trigger: true });
       }
     })
   }

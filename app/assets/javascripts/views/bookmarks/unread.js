@@ -35,6 +35,12 @@ SavedPages.Views.Unread = Backbone.View.extend({
     var bookmarkId = $(event.currentTarget).attr("data-bookmark-id");
     var bookmark = SavedPages.bookmarks.get(bookmarkId);
     bookmark.like();
+    // $(event.currentTarget).toggle("puff");
+    var that = $(event.currentTarget);
+    $(event.currentTarget).effect({ effect: "puff", complete: function() {
+      that.fadeIn();
+    }});
+    
   }
   
 });
