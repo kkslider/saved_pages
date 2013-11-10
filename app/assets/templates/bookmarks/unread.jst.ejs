@@ -1,5 +1,18 @@
-<div class="page_type">Unread</div>
+<script>
+$(document).ready(function() {
+  $(".options").hide();
+  $(".bookmark_row:last").css("border-bottom", "solid 1px #CFD1D1");
+  
+  if ($(".bookmark_row").length == 0) {
+    $(".page_type").css("border-bottom", "1px solid #CFD1D1");
+  }
+})
+</script>
 
+<div class="page_type">Unread</div>
+  <% if (bookmarks.length == 0) { %>
+    <div id="empty_list">No articles saved.</div>
+  <% } %>
   <% bookmarks.each(function(bookmark) { %>
   <div class="bookmark_row row">
       <div class="bookmark col-md-9" data-bookmark-id=<%= bookmark.escape("id") %>>
@@ -30,9 +43,3 @@
   <% }) %>
 </div>
 
-
-
-
-<script>
-  $(".options").hide();
-</script>

@@ -136,6 +136,7 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
 }
 
 #content {
+  background-color: #DDDDDD;
   font-size: 19px;
 //  -webkit-font-smoothing: antialiased;
   padding-left: 0px;
@@ -156,8 +157,27 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
 //  border-top-color: #CFD1D1;
 //  border-top-width: 1px;
 }
+.page_type {
+  background-color: #FFFFFF;
+}
+
+#empty_list {
+  height: 116px;
+  line-height: 116px;
+  position: relative;
+  font-family: "SourceSansPro";
+  text-align: center;
+  font-weight: lighter;
+  font-size: 17px;
+  color: #666666;
+  background-color: #FFFFFF;
+  border-bottom-style: solid;
+  border-bottom-color: #CFD1D1;
+  border-bottom-width: 1px;
+}
 
 .bookmark_row {
+  background-color: #FFFFFF;
   border-top-style: solid;
   border-top-color: #CFD1D1;
   border-top-width: 1px;

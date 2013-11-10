@@ -1,6 +1,44 @@
+<script>
+$(document).ready(function() {
+  $(".options").hide();
+  $(".bookmark_row:last").css("border-bottom", "solid 1px #CFD1D1");
+  
+  if ($(".bookmark_row").length == 0) {
+    $(".page_type").css("border-bottom", "1px solid #CFD1D1");
+  }
+})
+</script>
+
 <div class="page_type">Liked</div>
-<% bookmarks.each(function(bookmark) { %>
-  <div class="bookmark" data-bookmark-id="<%= bookmark.escape("id") %>">
-    <span><%= bookmark.escape("title") %></span>
+  <% if (bookmarks.length == 0) { %>
+    <div id="empty_list">You have no Liked items.</div>
+  <% } %>
+  <% bookmarks.each(function(bookmark) { %>
+  <div class="bookmark_row row">
+      <div class="bookmark col-md-9" data-bookmark-id=<%= bookmark.escape("id") %>>
+        <a href=<%= bookmark.escape("url") %>><span class="clickable_bookmark"><%= bookmark.escape("title") %></span></a>
+      </div>
+      <div class="options bookmark col-md-3">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2 col-md-offset-1">
+              <a href="#/bookmarks/<%= bookmark.escape("id") %>/edit"><span class="glyphicon glyphicon-pencil"></span></a>
+            </div>
+            <div class="col-md-2">
+              <a href="#/u" id="like_bookmark" data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-heart"></span></a>
+            </div>  
+            <div class="col-md-2">
+              <a href="#/u" id="archive_bookmark" data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-inbox"></span></a>
+            </div>  
+            <div class="col-md-2">
+              <a href="#/u" id="delete_bookmark" data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-trash"></span></a>
+            </div>
+            <div class="col-md-2">
+              <span class="glyphicon glyphicon-share"></span>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
-<% }) %>
+  <% }) %>
+</div>
