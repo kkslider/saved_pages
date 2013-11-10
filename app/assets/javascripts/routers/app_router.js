@@ -33,11 +33,13 @@ SavedPages.AppRouter = Backbone.Router.extend({
           // loadSidebar();
           that.sidebarView = new SavedPages.Views.Sidebar();
           // var sidebarView = new SavedPages.Views.Sidebar();
-          that.sidebarView.show();
+          // that.sidebarView.show();
           that.$sidebarEl.html(that.sidebarView.render().$el);
         }
         
+        
         that._swapView(unreadView);
+        that.sidebarView.show('unread');
       }
     });
   },
@@ -52,12 +54,13 @@ SavedPages.AppRouter = Backbone.Router.extend({
         });
         if ($("#sidebar").is(':empty')) {
           // loadSidebar();
-          var sidebarView = new SavedPages.Views.Sidebar();
+          that.sidebarView = new SavedPages.Views.Sidebar();
       
-          that.$sidebarEl.html(sidebarView.render().$el);
+          that.$sidebarEl.html(that.sidebarView.render().$el);
         }
         
         that._swapView(likedView);
+        that.sidebarView.show('liked');
       }
     });
   },
@@ -72,12 +75,13 @@ SavedPages.AppRouter = Backbone.Router.extend({
         });
         if ($("#sidebar").is(':empty')) {
           // loadSidebar();
-          var sidebarView = new SavedPages.Views.Sidebar();
+          that.sidebarView = new SavedPages.Views.Sidebar();
       
-          that.$sidebarEl.html(sidebarView.render().$el);
+          that.$sidebarEl.html(that.sidebarView.render().$el);
         }
         
         that._swapView(archiveView);
+        that.sidebarView.show('archive');
       }
     });
   },
@@ -102,9 +106,9 @@ SavedPages.AppRouter = Backbone.Router.extend({
         });
         if ($("#sidebar").is(':empty')) {
           // loadSidebar();
-          var sidebarView = new SavedPages.Views.Sidebar();
+          that.sidebarView = new SavedPages.Views.Sidebar();
       
-          that.$sidebarEl.html(sidebarView.render().$el);
+          that.$sidebarEl.html(that.sidebarView.render().$el);
         }
         
         that._swapView(editBookmarkView);
