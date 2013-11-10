@@ -1,13 +1,10 @@
-<script>
-$(document).ready(function() {
-$("#sidebar").append($("<div></div>"));
-})
-</script>
+
 <div class="row-fluid">
   <div class="col-md-12">
     <img src="assets/newspaper.jpg"></img>
   </div>
 </div>
+
 <div class="row-fluid">
   <div class="col-md-12" id="side_column_main">
    
@@ -22,3 +19,8 @@ $("#sidebar").append($("<div></div>"));
   </div>
 </div>
 
+<div class="row-fluid">
+  <div class="col-md-12" id="side_column_nav">
+    <div class="side_item side_row"><%= SavedPages.current_user %></div>
+  </div>
+</div>

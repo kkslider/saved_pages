@@ -131,7 +131,6 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
 
 #side_column_nav {
   background-color: #1b1b1b;
-  height: 400px;
 //  height: 50%;
 }
 
@@ -192,6 +191,11 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
   font-family: "SourceSansPro";
   font-weight: bold;
 }
+.col-md-12 {
+  padding: 0px;
+}
+
+
 
 //.bookmark div {
 //  position: absolute;
