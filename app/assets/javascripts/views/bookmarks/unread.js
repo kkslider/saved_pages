@@ -5,6 +5,8 @@ SavedPages.Views.Unread = Backbone.View.extend({
     "click .like_bookmark": "likeBookmark",
     "click .archive_bookmark": "archiveBookmark",
     "click .delete_bookmark": "deleteBookmark",
+    "mouseover a.glyphicon_link": "mouseOverIcon",
+    "mouseout a.glyphicon_link": "mouseOutIcon",
   },
   
   template: JST["bookmarks/unread"],
@@ -41,6 +43,8 @@ SavedPages.Views.Unread = Backbone.View.extend({
     var that = $(event.currentTarget);
     $(event.currentTarget).effect({ effect: "puff", complete: function() {
       that.fadeIn();
+      
+      that.children('span').eq(0).toggleClass("heartToggle");
     }});
   },
   
@@ -72,6 +76,18 @@ SavedPages.Views.Unread = Backbone.View.extend({
       bookmark.destroy();
       $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", { direction: "up" });
     }
+  },
+  
+  mouseOverIcon: function(event) {
+    $(event.target).css('color', '#333333');
+  },
+  
+  mouseOutIcon: function(event) {
+    if ($(event.currentTarget).hasClass("heartToggle")) {
+          $(event.target).css('color', '#c10000')
+        } else {
+          $(event.target).css('color', '#999999'); 
+        }
   }
   
 });

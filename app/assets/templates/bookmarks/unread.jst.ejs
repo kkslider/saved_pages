@@ -6,7 +6,11 @@ $(document).ready(function() {
   if ($(".bookmark_row").length == 0) {
     $(".page_type").css("border-bottom", "1px solid #CFD1D1");
   }
-})
+  
+  $.each($("a[data-favorited='true']"), function(index, value) {
+    $(value).children('span').eq(0).addClass("heartToggle");
+  })
+});
 </script>
 
 <div class="page_type">Unread</div>
@@ -22,19 +26,19 @@ $(document).ready(function() {
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-2 col-md-offset-1">
-              <a href="#/bookmarks/<%= bookmark.escape("id") %>/edit"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a href="#/bookmarks/<%= bookmark.escape("id") %>/edit" class="glyphicon_link"><span class="glyphicon glyphicon-pencil"></span></a>
             </div>
             <div class="col-md-2">
-              <a href="#/u" class="like_bookmark" data-favorited=<%= bookmark.escape("is_favorited") %> data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-heart"></span></a>
+              <a href="#/u" class="like_bookmark glyphicon_link" data-favorited=<%= bookmark.escape("is_favorited") %> data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-heart"></span></a>
             </div>  
             <div class="col-md-2">
-              <a href="#/u" class="archive_bookmark" data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-inbox"></span></a>
+              <a href="#/u" class="archive_bookmark glyphicon_link" data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-inbox"></span></a>
             </div>  
             <div class="col-md-2">
-              <a href="#/u" class="delete_bookmark" data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-trash"></span></a>
+              <a href="#/u" class="delete_bookmark glyphicon_link" data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-trash"></span></a>
             </div>
             <div class="col-md-2">
-              <span class="glyphicon glyphicon-share"></span>
+              <a href="#/u" class="share_bookmark glyphicon_link" data-bookmark-id=<%= bookmark.escape("id") %>><span class="glyphicon glyphicon-share"></span>
             </div>
           </div>
         </div>
