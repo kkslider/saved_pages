@@ -2,9 +2,9 @@ SavedPages.Views.Unread = Backbone.View.extend({
   events: {
     "mouseover .bookmark_row": "mouseOverBookmark",
     "mouseout .bookmark_row": "mouseOutBookmark",
-    "click #like_bookmark": "likeBookmark",
-    "click #archive_bookmark": "archiveBookmark",
-    "click #delete_bookmark": "deleteBookmark",
+    "click .like_bookmark": "likeBookmark",
+    "click .archive_bookmark": "archiveBookmark",
+    "click .delete_bookmark": "deleteBookmark",
   },
   
   template: JST["bookmarks/unread"],
