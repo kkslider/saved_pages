@@ -41,7 +41,13 @@ class BookmarksController < ApplicationController
   
   def unread
     # return if !current_user
-    @bookmarks = current_user.bookmarks.page(params[:page])
+    if params[:unread]
+      @bookmarks = current_user.bookmarks.where(is_archived: false).order("created_at DESC").page(params[:page])
+    elsif params[:liked]
+      @bookmarks = current_user.liked_bookmarks.order("updated_at DESC").page(params[:page])
+    else
+      @bookmarks = current_user.archived_bookmarks.order("updated_at DESC").page(params[:page])
+    end
  
     render :json => {
       :models => @bookmarks,
@@ -51,13 +57,21 @@ class BookmarksController < ApplicationController
   end
   
   def archive
-    @archived_bookmarks = current_user.archived_bookmarks
-    render :archive
+    @archived_bookmarks = current_user.archived_bookmarks.page(params[:page])
+    render :json => {
+     :models => @archived_bookmarks,
+     :page => params[:page],
+     :total_pages => @archived_bookmarks.total_pages
+    }
   end
   
   def like
-    @liked_bookmarks = current_user.liked_bookmarks
-    render :like
+    @liked_bookmarks = current_user.liked_bookmarks.page(params[:page])
+    render :json => {
+     :models => @liked_bookmarks,
+     :page => params[:page],
+     :total_pages => @liked_bookmarks.total_pages
+    }
   end
   
 end
