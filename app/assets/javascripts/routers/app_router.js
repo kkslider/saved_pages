@@ -5,6 +5,7 @@ SavedPages.AppRouter = Backbone.Router.extend({
   },
   
   routes: {
+    "u?page=:page": "showUnread",
     "u": "showUnread",
     "users/new": "newUser",
     "liked": "showLiked",
@@ -19,12 +20,16 @@ SavedPages.AppRouter = Backbone.Router.extend({
     this._swapView(newUserView);
   },
   
-  showUnread: function() {
+  showUnread: function(pageNum) {
     var that = this;
-    
+    pageNum = typeof pageNum !== "undefined" ? pageNum : 1
     SavedPages.bookmarks.fetch({
+      remove: true,
+      data: { page: pageNum },
       success: function(collection, model, options) {
         // alert('hi');
+        SavedPages.pageNum = pageNum;
+        alert(SavedPages.pageNum);
         var unreadView = new SavedPages.Views.Unread({
           collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
         });

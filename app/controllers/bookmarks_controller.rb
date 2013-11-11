@@ -41,9 +41,13 @@ class BookmarksController < ApplicationController
   
   def unread
     # return if !current_user
-    @bookmarks = current_user.bookmarks
+    @bookmarks = current_user.bookmarks.page(params[:page])
  
-    render :json => @bookmarks
+    render :json => {
+      :models => @bookmarks,
+      :page => params[:page],
+      :total_pages => @bookmarks.total_pages
+    }
   end
   
   def archive
