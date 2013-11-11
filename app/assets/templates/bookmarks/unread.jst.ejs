@@ -3,13 +3,26 @@ $(document).ready(function() {
   $(".options").hide();
   $(".bookmark_row:last").css("border-bottom", "solid 1px #CFD1D1");
   
-  if ($(".bookmark_row").length == 0) {
+  if (SavedPages.bookmarks.length == 0) {
     $(".page_type").css("border-bottom", "1px solid #CFD1D1");
+    $(".bookmark_row").hide();
   }
   
   $.each($("a[data-favorited='true']"), function(index, value) {
     $(value).children('span').eq(0).addClass("heartToggle");
   })
+  
+  if (SavedPages.bookmarks.total_pages == 1) {
+    $(".bookmark_row:last").hide();
+  }
+  
+  if (SavedPages.bookmarks.page == 1) {
+    $("#paginator_forward").hide();
+  }
+  
+  if (SavedPages.bookmarks.page == SavedPages.bookmarks.total_pages) {
+    $("#paginator_back").hide();
+  }
 });
 </script>
 
@@ -45,5 +58,14 @@ $(document).ready(function() {
       </div>
   </div>
   <% }) %>
+  <div class="bookmark_row row">
+    <div class="col-md-12 bookmark">
+          <div id="paginate_container">
+            <a id="paginator_back" class="paginator glyphicon_link" href="#/u/<%= (parseInt(SavedPages.bookmarks.page) + 1) %>"><span class="glyphicon glyphicon-chevron-left paginator_glyph"></span></a>
+            <a id="paginator_forward" class="paginator glyphicon_link" href="#/u/<%= (parseInt(SavedPages.bookmarks.page) - 1) %>"><span class="glyphicon glyphicon-chevron-right paginator_glyph"></span></a>
+          </div>
+    </div>
+  </div>
 </div>
+
 
