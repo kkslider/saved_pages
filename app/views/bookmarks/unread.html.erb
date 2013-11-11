@@ -1,0 +1,55 @@
+<%= content_for :javascript do %>
+  <%= javascript_tag do %>
+    SavedPages.initialize({ bookmarks: <%= current_user.bookmarks.to_json %> });
+  <% end %>
+<% end %>  
+
+<script>
+$(document).ready(function() {
+  $(".options").hide();
+  $(".bookmark_row:last").css("border-bottom", "solid 1px #CFD1D1");
+  
+  if ($(".bookmark_row").length == 0) {
+    $(".page_type").css("border-bottom", "1px solid #CFD1D1");
+  }
+  
+  $.each($("a[data-favorited='true']"), function(index, value) {
+    $(value).children('span').eq(0).addClass("heartToggle");
+  })
+});
+</script>
+
+<div class="page_type">Unread</div>
+  <% if @bookmarks.length == 0  %>
+    <div id="empty_list">No articles saved.</div>
+  <% end %>
+  <% @bookmarks.each do |bookmark| %>
+  <div class="bookmark_row row">
+      <div class="bookmark col-md-9" data-bookmark-id=<%= bookmark.id %>>
+        <a href=<%= bookmark.url %>><span class="clickable_bookmark"><%= bookmark.title %></span></a>
+      </div>
+      <div class="options bookmark col-md-3">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2 col-md-offset-1">
+              <a href="#/bookmarks/<%= bookmark.id %>/edit" class="glyphicon_link"><span class="glyphicon glyphicon-pencil"></span></a>
+            </div>
+            <div class="col-md-2">
+              <a href="#/u" class="like_bookmark glyphicon_link" data-favorited=<%= bookmark.is_favorited %> data-bookmark-id=<%= bookmark.id %>><span class="glyphicon glyphicon-heart"></span></a>
+            </div>  
+            <div class="col-md-2">
+              <a href="#/u" class="archive_bookmark glyphicon_link" data-bookmark-id=<%= bookmark.id %>><span class="glyphicon glyphicon-inbox"></span></a>
+            </div>  
+            <div class="col-md-2">
+              <a href="#/u" class="delete_bookmark glyphicon_link" data-bookmark-id=<%= bookmark.id %>><span class="glyphicon glyphicon-trash"></span></a>
+            </div>
+            <div class="col-md-2">
+              <a href="#/u" class="share_bookmark glyphicon_link" data-bookmark-id=<%= bookmark.id %>><span class="glyphicon glyphicon-share"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <% end %>
+</div>
+
