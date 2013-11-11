@@ -3,7 +3,6 @@ SavedPages.Views.Liked = Backbone.View.extend({
     "mouseover .bookmark_row": "mouseOverBookmark",
     "mouseout .bookmark_row": "mouseOutBookmark",
     "click #like_bookmark": "likeBookmark",
-    "click #archive_bookmark": "archiveBookmark",
     "click #delete_bookmark": "deleteBookmark",
   },
   
@@ -44,15 +43,6 @@ SavedPages.Views.Liked = Backbone.View.extend({
     }});
   },
   
-  archiveBookmark: function(event) {
-    event.preventDefault();
-    var bookmarkId = $(event.currentTarget).attr("data-bookmark-id");
-    var bookmark = SavedPages.bookmarks.get(bookmarkId);
-    bookmark.archive_this();
-    
-    $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", 
-      { direction: "right" });
-  },
   
   deleteBookmark: function(event) {
     event.preventDefault();
