@@ -199,24 +199,33 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
   padding: 0px;
 }
 
-#paginate_container {
+.paginate_container {
+//  border-left-style: solid;
+//  border-left-color: #CFD1D1;
+//  border-left-width: 1px;
+//  border-right-style: solid;
+//  border-right-color: #CFD1D1;
+//  border-right-width: 1px;
+  float: right;
+  text-align: center;
+  margin-right: 50px;
+  width: 110px;
+}
+
+.paginator {
   width: 55px;
-  border-left-style: solid;
-  border-left-color: #CFD1D1;
-  border-left-width: 1px;
-  border-right-style: solid;
-  border-right-color: #CFD1D1;
-  border-right-width: 1px;
   text-align: center;
 }
 
-#paginator {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+#paginator_forward {
+  width: 55px;
 }
 
-#paginator_glyph {
+#paginator_backward {
+  width: 55px;
+}
+
+.paginator_glyph {
   margin-left: auto;
   margin-right: auto;
 }

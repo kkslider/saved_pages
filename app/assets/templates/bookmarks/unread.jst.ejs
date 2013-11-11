@@ -10,6 +10,14 @@ $(document).ready(function() {
   $.each($("a[data-favorited='true']"), function(index, value) {
     $(value).children('span').eq(0).addClass("heartToggle");
   })
+  
+  if (SavedPages.bookmarks.page == 1) {
+    $("#paginator_forward").hide();
+  }
+  
+  if (SavedPages.bookmarks.page == SavedPages.bookmarks.total_pages) {
+    $("#paginator_back").hide();
+  }
 });
 </script>
 
@@ -46,11 +54,11 @@ $(document).ready(function() {
   </div>
   <% }) %>
   <div class="bookmark_row row">
-    <div class="col-md-11"></div>
-    <div class="col-md-1 bookmark">
-      <div id="paginate_container">
-        <a id="paginator" href="#/u?page=2"><span id="paginator_glyph" class="glyphicon glyphicon-chevron-left"></span></a>
-      </div>
+    <div class="col-md-12 bookmark">
+          <div class="paginate_container">
+            <a id="paginator_back" class="paginator glyphicon_link" href="#/u/<%= (parseInt(SavedPages.bookmarks.page) + 1) %>"><span class="glyphicon glyphicon-chevron-left paginator_glyph"></span></a>
+            <a id="paginator_forward" class="paginator glyphicon_link" href="#/u/<%= (parseInt(SavedPages.bookmarks.page) - 1) %>"><span class="glyphicon glyphicon-chevron-right paginator_glyph"></span></a>
+          </div>
     </div>
   </div>
 </div>
