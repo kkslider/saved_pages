@@ -6,6 +6,7 @@ window.SavedPages = {
   initialize: function() {
     // savedpages.store.bookmarks
     SavedPages.bookmarks = new SavedPages.Collections.Bookmarks();
+    
     new SavedPages.AppRouter({
       $rootEl: $("#content"),
       $sidebarEl: $("#sidebar")

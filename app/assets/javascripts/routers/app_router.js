@@ -46,11 +46,20 @@ SavedPages.AppRouter = Backbone.Router.extend({
   
   showLiked: function() {
     var that = this;
+
+    
     SavedPages.bookmarks.fetch({
       success: function() {
         // alert('hi');
+        var likedBookmarks = new Bookmarks(SavedPages.bookmarks.where({ is_favorited: true }));
+        likedBookmarks.comparator = function (bookmark) {
+          return - new Date(Date.parse(bookmark.get('updated_at'))).getTime();
+        };
+        
+        likedBookmarks.sort();
+ 
         var likedView = new SavedPages.Views.Liked({
-          collection: new Bookmarks(SavedPages.bookmarks.where({ is_favorited: true }))
+          collection: likedBookmarks
         });
         if ($("#sidebar").is(':empty')) {
           // loadSidebar();
@@ -70,8 +79,15 @@ SavedPages.AppRouter = Backbone.Router.extend({
     SavedPages.bookmarks.fetch({
       success: function() {
         // alert('hi');
+        var archivedBookmarks = new Bookmarks(SavedPages.bookmarks.where({ is_archived: true }));
+        archivedBookmarks.comparator = function (bookmark) {
+          return - new Date(Date.parse(bookmark.get('updated_at'))).getTime();
+        };
+        
+        archivedBookmarks.sort();
+        
         var archiveView = new SavedPages.Views.Archive({
-          collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: true }))
+          collection: archivedBookmarks
         });
         if ($("#sidebar").is(':empty')) {
           // loadSidebar();
