@@ -19,16 +19,17 @@
   function initMyBookmarklet() {
     (window.myBookmarklet = function() {
       jQuery.ajax({
-        url: "http://www.savedpag.es/bookmarks",
+        url: "http://localhost:3000/bookmarks",
         type: "POST",
-        crossDomain: true,
         xhrFields: {
-          withCredentials: true,
+          withCredentials: true
         },
-        data: {
+        crossDomain: true,
+        data: { bookmark: {
           url: "www.ebay.com",
           title: "EBAY",
           summary: "summary of ebay"
+          }
         },
         success: function(data) {
           showOverlay("awwyeah!");
@@ -72,4 +73,3 @@
   }
   
 })();
-

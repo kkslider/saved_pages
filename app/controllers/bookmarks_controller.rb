@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   layout "bookmarks"
   # respond_to :json
+  before_filter :require_logged_in!
   
   def create
     @bookmark = Bookmark.new(params[:bookmark])
@@ -72,6 +73,12 @@ class BookmarksController < ApplicationController
      :page => params[:page],
      :total_pages => @liked_bookmarks.total_pages
     }
+  end
+  
+  private
+  
+  def require_logged_in!
+    redirect_to root_url if !current_user
   end
   
 end
