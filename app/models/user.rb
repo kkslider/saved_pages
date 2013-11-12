@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
   
   before_validation(on: :create) do
     self.reset_session_token! if !self.session_token
-    self.set_bookmarklet_token!
+    # self.set_bookmarklet_token!
   end
+  
+  before_create :set_bookmarklet_token
   
   has_many(
   :bookmarks,
@@ -49,9 +51,8 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64(16)
   end
   
-  def set_bookmarklet_token!
+  def set_bookmarklet_token
     self.bookmarklet_token = self.class.generate_token
-    self.save!
   end
   
   def reset_session_token!
