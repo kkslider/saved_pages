@@ -1,7 +1,7 @@
 class BookmarksController < ApplicationController
   layout "bookmarks"
   # respond_to :json
-  before_filter :require_logged_in!
+  before_filter :require_current_user!
   skip_before_filter :verify_authenticity_token, :only => [:create]
   
   def create
