@@ -1,11 +1,21 @@
+<script>
+$("#sidebar").hide();
+$("#content").removeClass("col-md-10");
+</script>
 
-<header>
-  <h1>SavedPages</h1>
-  <nav>
-    <a href="#/users/new">Create Account</a>
-    <a href="#/session/new">Sign In</a>
-  </nav>
-</header>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="row" id="navbar_row">
+    <div class="col-md-7">
+      <img id="icon" src="assets/newspaper_icon.jpg"></img>
+      <h2 id="root_header">SavedPages</h2>
+    </div>
+    <div class="col-md-5 test123">
+      <a id="create_acct" href="#/users/new">Create Account</a>
+      <a href="#/session/new">Sign In</a>
+    </div>
+</nav>
+
+
 
 <section>
   <h3>A simple tool for saving web pages 

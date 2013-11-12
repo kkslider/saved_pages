@@ -14,13 +14,52 @@
  *= require_tree .
  *= require jquery.ui.all
  */
-img {
+#sidebar_img {
   width: 100%;
+}
+
+#icon {
+  height: 44px;
+  width: 44px;
+  float: left;
+  margin-left: 230px;
+  margin-top: 14px;
 }
 
 body {
   font-family: "TisaPro";
 }
+
+#root_header {
+  font-family: "Adelle";
+  font-weight: 100;
+  font-style: normal;
+  margin-left: 38%;
+  margin-top: 22px;
+  padding-bottom: 15px;
+}
+
+.test123 {
+  margin-top: 26px;
+}
+.test123 a {
+ color: #aaaaaa !important;
+ font-size: 16px;
+ font-family: "AdelleSans";
+ font-weight: 100; 
+}
+
+#create_acct {
+  margin-left: 50px;
+  padding-right: 30px;
+}
+
+#navbar_row {
+  background-color: #222222;
+  color: #ffffff;
+}
+
+/* ------------- */
 
 #sidebar {
   font-family: "SourceSansPro";
@@ -233,8 +272,26 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
 
 
 
+@font-face {
+  font-family: 'Adelle';
+  src: font-url('Adelle-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Adelle';
+  src: font-url('Adelle-Light.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'AdelleSans';
+  src: font-url('AdelleSans-Light.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'TisaPro';

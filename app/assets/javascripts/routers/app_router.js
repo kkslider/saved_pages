@@ -23,6 +23,8 @@ SavedPages.AppRouter = Backbone.Router.extend({
   },
   
   showUnread: function(pageNum) {
+    $("#sidebar").show();
+    $("#content").addClass("col-md-10");
     var that = this;
     pageNum = typeof pageNum !== "undefined" ? pageNum : 1
     
