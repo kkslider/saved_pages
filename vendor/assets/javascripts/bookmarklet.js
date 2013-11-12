@@ -18,7 +18,20 @@
   
   function initMyBookmarklet() {
     (window.myBookmarklet = function() {
-      showOverlay("awwyeah!");
+      jQuery.ajax({
+        url: "http://www.savedpag.es/bookmarks",
+        type: "POST",
+        data: {
+          url: "www.ebay.com",
+          title: "EBAY",
+          summary: "summary of ebay"
+        },
+        success: function(data) {
+          showOverlay("awwyeah!");
+          alert(data.id);
+        }
+      });
+      
     })();
   }
   
