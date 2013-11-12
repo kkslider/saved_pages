@@ -30,19 +30,12 @@ SavedPages.AppRouter = Backbone.Router.extend({
       remove: true,
       data: { page: pageNum, unread: true },
       success: function(collection, model, options) {
-        // alert('hi');
-        // SavedPages.bookmarks = pageNum;
-        // alert(SavedPages.pageNum);
         var unreadView = new SavedPages.Views.Unread({
-          // collection: new Bookmarks(SavedPages.bookmarks.where({ is_archived: false }))
           collection: SavedPages.bookmarks
         });
         
         if ($("#sidebar").is(':empty')) {
-          // loadSidebar();
           that.sidebarView = new SavedPages.Views.Sidebar();
-          // var sidebarView = new SavedPages.Views.Sidebar();
-          // that.sidebarView.show();
           that.$sidebarEl.html(that.sidebarView.render().$el);
         }
         
@@ -61,18 +54,10 @@ SavedPages.AppRouter = Backbone.Router.extend({
       remove: true,
       data: { page: pageNum, liked: true },
       success: function() {
-        // var likedBookmarks = new Bookmarks(SavedPages.bookmarks.where({ is_favorited: true }));
-        // likedBookmarks.comparator = function (bookmark) {
-        //   return - new Date(Date.parse(bookmark.get('updated_at'))).getTime();
-        // };
-        // 
-        // likedBookmarks.sort();
-        // alert(SavedPages.bookmarks.total_pages);
         var likedView = new SavedPages.Views.Liked({
           collection: SavedPages.bookmarks
         });
         if ($("#sidebar").is(':empty')) {
-          // loadSidebar();
           that.sidebarView = new SavedPages.Views.Sidebar();
       
           that.$sidebarEl.html(that.sidebarView.render().$el);
@@ -92,20 +77,11 @@ SavedPages.AppRouter = Backbone.Router.extend({
       remove: true,
       data: { page: pageNum, archived: true },
       success: function() {
-        // alert('hi');
-        // var archivedBookmarks = new Bookmarks(SavedPages.bookmarks.where({ is_archived: true }));
-        // archivedBookmarks.comparator = function (bookmark) {
-        //   return - new Date(Date.parse(bookmark.get('updated_at'))).getTime();
-        // };
-        // 
-        // archivedBookmarks.sort();
-        // 
         var archiveView = new SavedPages.Views.Archive({
           collection: SavedPages.bookmarks
         });
         
         if ($("#sidebar").is(':empty')) {
-          // loadSidebar();
           that.sidebarView = new SavedPages.Views.Sidebar();
       
           that.$sidebarEl.html(that.sidebarView.render().$el);
@@ -131,12 +107,10 @@ SavedPages.AppRouter = Backbone.Router.extend({
     
     SavedPages.bookmarks.fetch({
       success: function() {
-        // alert('hi');
         var editBookmarkView = new SavedPages.Views.EditBookmark({
           model: SavedPages.bookmarks.get(id)
         });
         if ($("#sidebar").is(':empty')) {
-          // loadSidebar();
           that.sidebarView = new SavedPages.Views.Sidebar();
       
           that.$sidebarEl.html(that.sidebarView.render().$el);
@@ -146,32 +120,6 @@ SavedPages.AppRouter = Backbone.Router.extend({
       }
     });
   },
-  
-  // destroyBookmark: function(id) {
-  //   var that = this;
-  //   SavedPages.bookmarks.fetch({
-  //     success: function() {
-  //       // alert('hi');
-  //       // var editBookmarkView = new SavedPages.Views.EditBookmark({
-  //       //   model: SavedPages.bookmarks.get(id)
-  //       // });
-  //       if ($("#sidebar").is(':empty')) {
-  //         // loadSidebar();
-  //         var sidebarView = new SavedPages.Views.Sidebar();
-  //     
-  //         that.$sidebarEl.html(sidebarView.render().$el);
-  //       }
-  //       
-  //       // that._swapView(editBookmarkView);
-  //       var bookmark = SavedPages.bookmarks.get(id);
-  //       bookmark.destroy({
-  //         success:function() {
-  //           alert("DESTROYED!");
-  //         }
-  //       });
-  //     }
-  //   });
-  // },
   
   _swapView: function(newView) {
     this._currentView && this._currentView.remove();

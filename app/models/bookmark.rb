@@ -1,7 +1,7 @@
 class Bookmark < ActiveRecord::Base
   attr_accessible :summary, :title, :url, :user_id, :author, :is_favorited, :is_archived
   validates :summary, :title, :url, :user_id, presence: true
-  paginates_per 5
+  paginates_per 14
   
   def is_favorited?
     self.is_favorited
