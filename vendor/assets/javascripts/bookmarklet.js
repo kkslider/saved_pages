@@ -21,6 +21,10 @@
       jQuery.ajax({
         url: "http://www.savedpag.es/bookmarks",
         type: "POST",
+        crossDomain: true,
+        xhrFields: {
+          withCredentials: true,
+        },
         data: {
           url: "www.ebay.com",
           title: "EBAY",
