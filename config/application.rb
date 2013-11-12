@@ -60,7 +60,7 @@ module SavedPages
     config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
     
-    config.middleware.insert 0, Rack::Cors do
+    config.middleware.use Rack::Cors do
       allow do
         origins '*'
         resource '*', :headers => :any, :methods => [:get, :post, :options]
