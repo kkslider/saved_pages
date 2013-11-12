@@ -33,7 +33,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'newrelic_rpm'
 gem 'kaminari'
-gem 'rack-cors', :require => 'rack/cors'
+# gem 'rack-cors', :require => 'rack/cors'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
