@@ -9,7 +9,7 @@ $("#content").removeClass("col-md-10");
       <img id="icon" src="assets/newspaper_icon.jpg"></img>
       <h2 id="root_header">SavedPages</h2>
     </div>
-    <div class="col-md-5 test123">
+    <div class="col-md-5 account">
       <a id="create_acct" href="#/users/new">Create Account</a>
       <a href="#/session/new">Sign In</a>
     </div>
@@ -17,29 +17,50 @@ $("#content").removeClass("col-md-10");
 
 
 
-<section>
-  <h3>A simple tool for saving web pages 
-      to read later on any computer or phone.</h3>
-  <a href="#/users/new">Create an Account</a>
+<section id="root_main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="assets/laptop.jpg"></img>
+      </div>
+      <div class="col-md-6" id="root_main_right">
+        <h3>
+          A simple tool for saving web pages 
+          to read later on any computer or mobile device.
+        </h3>
+        <a href="#/users/new" class="btn btn-danger btn-lg">Create an Account</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>How it Works</h3>
-  <div>
-    <h3>Add the Bookmarklet</h3>
-    <a href="javascript:(function(){if(window.myBookmarklet!==undefined){myBookmarklet();}else{document.body.appendChild(document.createElement('script')).src='https://gist.github.com/kkslider/52a80ce2222643283c55/raw/f70ce1d8fc1cd36267715b06fdbfdf03b8896742/blet1.js?';}})();">Bookmarklet</a>
-    <!-- <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://gist.github.com/kkslider/f8bb8a576c522149825f.js';})();">Externalized Bookmarklet</a> -->
-    <!-- <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://gist.github.com/kkslider/f8bb8a576c522149825f.js';})();">Bookmarklet</a> -->
-    <p>Install the Instapaper bookmarklet by dragging it to your bookmark bar.</p>
-  </div>
-  
-  <div>
-    <h3>Save Articles for Later</h3>
-    <p>When you find something you want to read, but you don't have the time, click the bookmarklet.</p>
-  </div>
-  
-  <div>
-    <h3>Read Anywhere</h3>
-    <p>Return to the article later by signing in to your account.</p>
-  </div>
+<section id="root_tutorial">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>How it Works</h3>
+          <div>
+            <span class="glyphicon glyphicon-bookmark root"></span>
+            <h3>Add the Bookmarklet</h3>
+            <!-- <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://gist.github.com/kkslider/f8bb8a576c522149825f.js';})();">Externalized Bookmarklet</a> -->
+            <!-- <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://gist.github.com/kkslider/f8bb8a576c522149825f.js';})();">Bookmarklet</a> -->
+            <p>Install the Instapaper bookmarklet by dragging it to your bookmark bar.</p>
+          </div>
+        </div>
+        <div class="col-md-4 inner">
+          <div>
+            <span class="glyphicon glyphicon-list-alt root"></span>
+            <h3>Save Articles for Later</h3>
+            <p>When you find something you want to read, but you don't have the time, click the bookmarklet.</p>
+          </div>
+        </div>
+        <div class="col-md-4 inner">
+          <div>
+            <span class="glyphicon glyphicon-briefcase root"></span>
+            <h3>Read Anywhere</h3>
+            <p>Return to the article later by signing in to your account.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 </section>
