@@ -106,21 +106,16 @@ SavedPages.AppRouter = Backbone.Router.extend({
   
   editBookmark: function(id) {
     var that = this;
-    
-    SavedPages.bookmarks.fetch({
-      success: function() {
-        var editBookmarkView = new SavedPages.Views.EditBookmark({
-          model: SavedPages.bookmarks.get(id)
-        });
-        if ($("#sidebar").is(':empty')) {
-          that.sidebarView = new SavedPages.Views.Sidebar();
-      
-          that.$sidebarEl.html(that.sidebarView.render().$el);
-        }
-        
-        that._swapView(editBookmarkView);
-      }
+    var editBookmarkView = new SavedPages.Views.EditBookmark({
+      model: SavedPages.bookmarks.get(id)
     });
+    if ($("#sidebar").is(':empty')) {
+      that.sidebarView = new SavedPages.Views.Sidebar();
+  
+      that.$sidebarEl.html(that.sidebarView.render().$el);
+    }
+    
+    that._swapView(editBookmarkView);
   },
   
   _swapView: function(newView) {
