@@ -18,7 +18,8 @@ class SessionsController < ApplicationController
   
   def destroy
     logout_current_user!
-    redirect_to new_session_url
+    render :json => nil
+    # redirect_to root_url, status: 200
     # need to redirect somewhere
   end
 end

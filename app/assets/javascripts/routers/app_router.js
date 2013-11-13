@@ -122,6 +122,9 @@ SavedPages.AppRouter = Backbone.Router.extend({
     this._currentView && this._currentView.remove();
     this._currentView = newView;
     this.$rootEl.html(newView.render().$el);
+    $("#sidebar").show();
+    $("#content").addClass("col-md-10");
+    
   }
   
 });

@@ -2,6 +2,7 @@ SavedPages.Views.Sidebar = Backbone.View.extend({
   events: {
     "mouseover a": "mouseOverNav",
     "mouseout a": "mouseOutNav",  
+    "click #logout": "logOutUser",
   },
   
   
@@ -39,9 +40,25 @@ SavedPages.Views.Sidebar = Backbone.View.extend({
     if ($(event.target).attr("id") == SavedPages.currentNav) {
       return;
     }
-    $(event.target).css('background-color', '#222222');
+    
+    if ($(event.target).attr("id") == "logout") {
+      $(event.target).css('backgroud-color', '#999999');
+      return;
+    }
+    $(event.target).css('background-color', '#1b1b1b');
     $(event.target).css('color', '#999999');
     $(event.target).children('span').eq(0).css('color', '#999999');
+  },
+  
+  logOutUser: function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: "/session",
+      type: "DELETE",
+      success: function (data) {
+        window.location.href = "http://localhost:3000";
+      }
+    })
   }
   
   
