@@ -2,7 +2,14 @@
 $(document).ready(function() {
   $("#sidebar").hide();
   $("#content").removeClass("col-md-10");
+  
+  $("#sign_in_demo_btn").click(function(event) {
+    event.preventDefault();
+    $("#demo_form").submit();
+  });
 });
+
+
 </script>
 
 <nav class="navbar navbar-default" role="navigation">
@@ -75,7 +82,12 @@ $(document).ready(function() {
 
 
 <!-- Demo Account Form -->
-<form type="<%= ">
+<form id="demo_form" action="<%= session_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="password" name="user[email]" value="test1@test.com">
+  <input type="password" name="user[password]" value="password">
+  <input type="submit" value="Sign in">
+</form>
 
 
 <section id="root_main">
@@ -90,7 +102,7 @@ $(document).ready(function() {
           to read later on any computer or mobile device.
         </h3>
         <a data-toggle="modal" class="btn btn-danger btn-lg" href="#create_user_modal">Create an Account</a>
-        <a class="btn btn-danger btn-lg" href="#">Sign in with Demo</a>
+        <a class="btn btn-danger btn-lg" id="sign_in_demo_btn" href="#demo_form">Sign in with Demo</a>
       </div>
     </div>
   </div>
