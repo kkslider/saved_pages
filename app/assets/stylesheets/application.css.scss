@@ -357,12 +357,19 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
   font-size: 17px;
   p {
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
   }
   a {
     color: #ffffff;
     font-weight: 200;
+    + p {
+      padding-bottom: 50px;
+    }
   }
+}
+
+#bookmarklet {
+  cursor: -webkit-grab; cursor: -moz-grab;
 }
 
 /* -------*/
