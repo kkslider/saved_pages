@@ -17,6 +17,7 @@
 //= require custom
 //= require underscore
 //= require backbone
+//= require bootstrap
 //= require saved_pages
 //= require_tree ../templates
 //= require_tree ./models

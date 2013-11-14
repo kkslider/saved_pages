@@ -2,9 +2,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      render :json => @user
+      login_user!(@user)
+      # render :json => @user
+      redirect_to '#/u'
     else
-      render :json => @user.errors.full_messages, status: 422
+      # render :json => @user.errors.full_messages, status: 422
     end
   end
   

@@ -30,6 +30,10 @@ body {
   font-family: "TisaPro";
 }
 
+body.modal-open {
+  margin-right: 0px !important;
+}
+
 #root_header {
   font-family: "Adelle";
   font-weight: 100;
