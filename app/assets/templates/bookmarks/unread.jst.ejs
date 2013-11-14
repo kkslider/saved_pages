@@ -9,7 +9,9 @@ $(document).ready(function() {
   }
   
   $.each($("a[data-favorited='true']"), function(index, value) {
-    $(value).children('span').eq(0).addClass("heartToggle");
+    var heart =  $(value).children('span').eq(0);
+    heart.addClass("heartToggle");
+    heart.attr("title", "Unfavorite");
   })
   
   if (SavedPages.bookmarks.total_pages == 1) {

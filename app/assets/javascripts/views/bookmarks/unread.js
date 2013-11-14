@@ -44,7 +44,14 @@ SavedPages.Views.Unread = Backbone.View.extend({
     $(event.currentTarget).effect({ effect: "puff", complete: function() {
       that.fadeIn();
       
-      that.children('span').eq(0).toggleClass("heartToggle");
+      var heart = that.children('span').eq(0)
+      
+      heart.toggleClass("heartToggle");
+      if (heart.hasClass("heartToggle")) {
+        heart.attr("title", "Unfavorite")
+      } else {
+        heart.attr("title", "Favorite")
+      }
     }});
   },
   
