@@ -93,7 +93,7 @@ SavedPages.Views.Unread = Backbone.View.extend({
     var bookmarkTitle = bookmark.get("title");
     var bookmarkURL = bookmark.get("url");
     window.location.href = "mailto:?subject=" + bookmarkTitle + "&body=" + bookmarkTitle + "%0D%0A" + bookmarkURL + 
-      "%0D%0A%0D%0A" + "(via SavedPages)";s
+      "%0D%0A%0D%0A" + "(via SavedPages)";
     
   },
   
