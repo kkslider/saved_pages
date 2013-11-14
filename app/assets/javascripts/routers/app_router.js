@@ -14,6 +14,7 @@ SavedPages.AppRouter = Backbone.Router.extend({
     "archive": "showArchive",
     "session/new": "newSession",
     "bookmarks/:id/edit": "editBookmark",
+    "save" : "howToSave",
     // "bookmarks/:id": "destroyBookmark"
   },
   
@@ -118,13 +119,26 @@ SavedPages.AppRouter = Backbone.Router.extend({
     that._swapView(editBookmarkView);
   },
   
+  howToSave: function() {
+    var howToSaveView = new SavedPages.Views.Save();
+    // 
+    if ($("#sidebar").is(':empty')) {
+      this.sidebarView = new SavedPages.Views.Sidebar();
+    //   
+      this.$sidebarEl.html(this.sidebarView.render().$el);
+    }
+    this.sidebarView.show('save');
+    this._swapView(howToSaveView);
+  },
+  
+  
   _swapView: function(newView) {
     this._currentView && this._currentView.remove();
     this._currentView = newView;
     this.$rootEl.html(newView.render().$el);
+
     $("#sidebar").show();
     $("#content").addClass("col-md-10");
-    
   }
   
 });

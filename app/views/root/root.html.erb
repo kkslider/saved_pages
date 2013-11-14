@@ -3,8 +3,6 @@ $(document).ready(function() {
   $("#sidebar").hide();
   $("#content").removeClass("col-md-10");
 });
-
-
 </script>
 
 <nav class="navbar navbar-default" role="navigation">
@@ -16,9 +14,6 @@ $(document).ready(function() {
     <div class="col-md-5 account">
       <a data-toggle="modal" href="#create_user_modal" id="create_acct">Create Account</a>
       <a data-toggle="modal" href="#sign_in_modal">Sign In</a>
-      <!-- <%= link_to("Create Account", new_user_url, id: "create_acct") %>
-      <%= link_to("Sign In", new_session_url) %> -->
-        
     </div>
 </nav>
 
@@ -48,10 +43,6 @@ $(document).ready(function() {
           <input type="submit" value="Create Account">
         </form>
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -78,10 +69,6 @@ $(document).ready(function() {
           <input type="submit" value="Sign In">
         </form>
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -99,7 +86,6 @@ $(document).ready(function() {
           to read later on any computer or mobile device.
         </h3>
         <a data-toggle="modal" class="btn btn-danger btn-lg" href="#create_user_modal">Create an Account</a>
-        <!-- <%= link_to("Create an Account", new_user_url, class: "btn btn-danger btn-lg") %> -->
       </div>
     </div>
   </div>
@@ -113,8 +99,6 @@ $(document).ready(function() {
           <div>
             <span class="glyphicon glyphicon-bookmark root"></span>
             <h3>Add the Bookmarklet</h3>
-            <!-- <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://gist.github.com/kkslider/f8bb8a576c522149825f.js';})();">Externalized Bookmarklet</a> -->
-            <!-- <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://gist.github.com/kkslider/f8bb8a576c522149825f.js';})();">Bookmarklet</a> -->
             <p>Install the Instapaper bookmarklet by dragging it to your bookmark bar.</p>
           </div>
         </div>

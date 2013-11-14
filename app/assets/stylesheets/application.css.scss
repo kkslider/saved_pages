@@ -343,7 +343,19 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
   margin-right: auto;
 }
 
+/* ------ */
 
+#instructions_outer {
+  background-color: #ffffff;
+  padding-left: 20px;
+  border-top: 1px solid #cfd1d1;
+}
+
+#instructions_outer div {
+  width: 560px;
+}
+
+/* -------*/
 
 
 @font-face {
