@@ -5,6 +5,7 @@ SavedPages.Views.Archive = Backbone.View.extend({
     "click .like_bookmark": "likeBookmark",
     "click .archive_bookmark": "archiveBookmark",
     "click .delete_bookmark": "deleteBookmark",
+    "click .share_bookmark": "shareBookmark",
     "mouseover a.glyphicon_link": "mouseOverIcon",
     "mouseout a.glyphicon_link": "mouseOutIcon",
   },
@@ -83,6 +84,16 @@ SavedPages.Views.Archive = Backbone.View.extend({
       bookmark.destroy();
       $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", { direction: "up" });
     }
+  },
+  
+  shareBookmark: function(event) {
+    event.preventDefault();
+    var bookmarkId = $(event.currentTarget).parents().eq(4).children().eq(0).attr("data-bookmark-id");
+    var bookmark = SavedPages.bookmarks.get(bookmarkId);
+    var bookmarkTitle = bookmark.get("title");
+    var bookmarkURL = bookmark.get("url");
+    window.location.href = "mailto:?subject=" + bookmarkTitle + "&body=" + bookmarkTitle + "%0D%0A" + bookmarkURL + 
+      "%0D%0A%0D%0A" + "(via SavedPages)";
   },
   
   mouseOverIcon: function(event) {
