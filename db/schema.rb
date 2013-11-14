@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131112221022) do
+ActiveRecord::Schema.define(:version => 20131114092745) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",                         :null => false
     t.string   "url",                             :null => false
     t.string   "title",                           :null => false
-    t.string   "summary",                         :null => false
+    t.string   "summary"
     t.string   "author"
     t.boolean  "is_favorited", :default => false, :null => false
     t.boolean  "is_archived",  :default => false, :null => false
