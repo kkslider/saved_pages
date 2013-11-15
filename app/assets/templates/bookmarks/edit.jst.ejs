@@ -1,16 +1,22 @@
+<div class="page_type">Edit</div>
+<div id="instructions_outer">
+<div id="edit_div">
 <h3><%= title %></h3>
 <form id="edit_bookmark_form">
-  <label for="bookmark_url">URL:</label>
+  <label for="bookmark_url" class="edit_bookmark_label">URL:</label>
   <input type="text" name="bookmark[url]" value="<%= bookmark.escape("url") %>" id="bookmark_url">
   <br>
   
-  <label for="bookmark_title">Title:</label>
+  <label for="bookmark_title" class="edit_bookmark_label">Title:</label>
   <input type="text" name="bookmark[title]" value="<%= bookmark.escape("title") %>" id="bookmark_title">
   <br>
   
-  <label for="bookmark_summary">Summary:</label>
-  <input type="text" name="bookmark[summary]" value="<%= bookmark.escape("summary") %>" id="bookmark_summary">
+  <label for="bookmark_summary" id="summary_label">Summary:</label>
+  <textarea name="bookmark[summary]" id="bookmark_summary"><%= bookmark.escape("summary") %></textarea>
   <br>
   
-  <input type="submit" value="Save changes">
+  <input type="submit" value="Save changes" class="btn btn-primary">
 </form>
+</div>
+
+</div>

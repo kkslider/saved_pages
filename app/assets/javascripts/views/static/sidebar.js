@@ -57,7 +57,7 @@ SavedPages.Views.Sidebar = Backbone.View.extend({
       url: "/session",
       type: "DELETE",
       success: function (data) {
-        window.location.href = "http://localhost:3000";
+        window.location.href = "http://www.savedpag.es";
       }
     })
   }
