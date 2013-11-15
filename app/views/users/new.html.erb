@@ -1,4 +1,55 @@
-<div id="content">
+<script>
+$(document).ready(function() {
+  $("#sidebar").hide();
+  $("#content").removeClass("col-md-10");
+});
+</script>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="row" id="navbar_row">
+    <div class="col-md-7">
+      <img id="icon" src="/assets/newspaper_icon.jpg"></img>
+      <h2 id="root_header">SavedPages</h2>
+    </div>
+    <div class="col-md-5 account">
+      <%= link_to("Create Account", new_user_url, id: "create_acct") %>
+      <!-- <a href="#create_user_modal" id="create_acct">Create Account</a> -->
+      <%= link_to("Sign In", new_session_url) %>
+      <!-- <a data-toggle="modal" href="#sign_in_modal">Sign In</a> -->
+    </div>
+</nav>
+
+<div class="whole_container">
+<div class="container">
+  <%= render :partial => "layouts/errors" %>
+  <header>
+    <h3 id="error_create_account">Create Account</h3>
+  </header>
+  
+  <section>
+    <form action="<%= users_url %>" method="post" class="root_form form-horizontal">
+      <input type="hidden" 
+             name="authenticity_token"
+             value="<%= form_authenticity_token %>">
+      <label for="user_email" class="email_label">Email:</label>
+      <input type="text" name="user[email]" id="user_email">
+      <br>
+      
+      <label for="user_password">Password:</label>
+      <input type="password" name="user[password]" id="user_password">
+      <br>
+      
+      <input type="submit" value="Create Account" class="btn btn-primary">
+    </form>
+  </section>
+</div>
+</div>
+<div class="footer">
+  <div class="container">
+    <span>&copy; SavedPages, Benjamin Lee 2013</span>
+  </div>
+</div>
+
+<!-- <div id="content">
   <header>
     <h3>Create An Account</h3>
     <h3>or</h3>
@@ -19,4 +70,4 @@
       <input type="submit" value="Create Account">
     </form>
   </section>
-</div>
+</div> -->

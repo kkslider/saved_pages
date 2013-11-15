@@ -7,6 +7,8 @@ class UsersController < ApplicationController
       redirect_to '#/u'
     else
       # render :json => @user.errors.full_messages, status: 422
+      flash.now[:error] = @user.errors.full_messages
+      render :new
     end
   end
   

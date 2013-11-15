@@ -1,0 +1,14 @@
+<% if flash.now[:error] %>
+  <% if flash.now[:error].is_a?(String) %>
+    <div class="alert alert-danger">
+      <%= flash.now[:error] %>
+    </div>
+  <% elsif flash.now[:error].is_a?(Array) %>
+    <% flash.now[:error].each do |error| %>
+       <div class="alert alert-danger">
+         <%= error %>
+        </div>
+    <% end %>
+  <% end %>
+<% end %>
+

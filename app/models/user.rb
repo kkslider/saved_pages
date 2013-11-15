@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, on: :create
   
   before_validation(on: :create) do
-    self.reset_session_token! if !self.session_token
+    self.reset_session_token if !self.session_token
     # self.set_bookmarklet_token!
   end
   
@@ -53,6 +53,10 @@ class User < ActiveRecord::Base
   
   def set_bookmarklet_token
     self.bookmarklet_token = self.class.generate_token
+  end
+  
+  def reset_session_token
+    self.session_token = self.class.generate_token
   end
   
   def reset_session_token!

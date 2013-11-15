@@ -12,8 +12,9 @@ class SessionsController < ApplicationController
       # redirect/render
     else
       # render :json => user.errors.full_messages, status: 422
-      flash[:errors] = user.errors.full_messages
-      redirect_to root_url
+      flash.now[:error] = "Invalid email/password combination"
+      render :new
+      # redirect_to root_url, :flash => { :error => "Incorrect email or password" }
       # redirect/render
     end
   end

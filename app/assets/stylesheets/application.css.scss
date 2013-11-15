@@ -155,6 +155,42 @@ body.modal-open {
   }
 }
 
+#error_sign_in, #error_create_account {
+  font-family: "AdelleSans";
+}
+
+.whole_container {
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 3%;
+  padding-bottom: 8%;
+  .container {
+    width: 40%;
+  }
+}
+
+.root_footer {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  position: absolute;
+  height: 70px;
+  line-height: 70px;
+  bottom: 0px;
+  text-align: center;
+}
+
+
+.footer {
+  width: 100%;
+  background-color: #dddddd;
+  position: absolute;
+  height: 70px;
+  line-height: 70px;
+  bottom: 0px;
+  text-align: center;
+}
+
 
 //#root_main_right h3 {
 //  margin-top: 160px;

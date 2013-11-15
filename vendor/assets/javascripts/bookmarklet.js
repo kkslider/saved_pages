@@ -32,8 +32,7 @@
           }
         },
         success: function(data) {
-          showOverlay("awwyeah!");
-          alert(data.id);
+          showOverlay("Saved!");
         }
       });
       
