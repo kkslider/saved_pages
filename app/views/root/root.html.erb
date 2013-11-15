@@ -37,17 +37,17 @@ $(document).ready(function() {
         <h4 class="modal-title" id="myModalLabel">Create An Account</h4>
       </div>
       <div class="modal-body">
-        <form action="<%= users_url %>" method="post">
+        <form action="<%= users_url %>" method="post" class="root_form form-horizontal">
           <input type="hidden" 
                  name="authenticity_token"
                 value="<%= form_authenticity_token %>">
-          <label for="user_email">Email:</label>
+          <label for="user_email" class="email_label">Email:</label>
           <input type="text" name="user[email]" id="user_email">
           <br>
           <label for="user_password">Password:</label>
           <input type="password" name="user[password]" id="user_password">
           <br>
-          <input type="submit" value="Create Account">
+          <input type="submit" value="Create Account" class="btn btn-primary">
         </form>
       </div>
     </div><!-- /.modal-content -->
@@ -63,17 +63,19 @@ $(document).ready(function() {
         <h4 class="modal-title" id="myModalLabel">Sign In</h4>
       </div>
       <div class="modal-body">
-        <form action="<%= session_url %>" method="post">
+        <form action="<%= session_url %>" method="post" class="root_form form-horizontal">
           <input type="hidden" 
                  name="authenticity_token"
                  value="<%= form_authenticity_token %>">
-          <label for="user_email">Email:</label>
+          <label for="user_email" class="email_label">Email:</label>
           <input type="text" name="user[email]" id="user_email">
           <br>
+          
           <label for="user_password">Password:</label>
           <input type="password" name="user[password]" id="user_password">
           <br>
-          <input type="submit" value="Sign In">
+          
+          <input type="submit" value="Sign In" class="btn btn-primary">
         </form>
       </div>
     </div><!-- /.modal-content -->

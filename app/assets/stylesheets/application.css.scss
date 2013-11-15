@@ -79,6 +79,8 @@ body.modal-open {
     font-family: "AdelleSans";
     font-weight: 100; 
     width: 400px;
+    line-height: 35px;
+    margin-top: 5px;
   }
   a {
     color: #aaaaaa !important;
@@ -131,6 +133,28 @@ body.modal-open {
 #demo_form {
   display: none;
 }
+
+.root_form {
+  font-family: "AdelleSans";
+  font-weight: 100;
+  label {
+    font-family: "AdelleSans";
+    font-weight: 100;
+    font-size: 14px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+  };
+  .email_label {
+    padding-left: 29px;
+  }
+  input[type="submit"] {
+    font-size: 16px;
+  }
+  input:not([type="submit"]) {
+    width: 50%;
+  }
+}
+
 
 //#root_main_right h3 {
 //  margin-top: 160px;

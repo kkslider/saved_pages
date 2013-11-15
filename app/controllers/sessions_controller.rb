@@ -11,7 +11,9 @@ class SessionsController < ApplicationController
       redirect_to '#/u'
       # redirect/render
     else
-      render :json => user.errors.full_messages, status: 422
+      # render :json => user.errors.full_messages, status: 422
+      flash[:errors] = user.errors.full_messages
+      redirect_to root_url
       # redirect/render
     end
   end
