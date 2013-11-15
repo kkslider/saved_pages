@@ -40,7 +40,6 @@ SavedPages.Views.Archive = Backbone.View.extend({
     var bookmarkId = $(event.currentTarget).attr("data-bookmark-id");
     var bookmark = SavedPages.bookmarks.get(bookmarkId);
     bookmark.like();
-    // $(event.currentTarget).toggle("puff");
     var that = $(event.currentTarget);
     $(event.currentTarget).effect({ effect: "puff", complete: function() {
       that.fadeIn();
@@ -62,7 +61,7 @@ SavedPages.Views.Archive = Backbone.View.extend({
     var bookmark = SavedPages.bookmarks.get(bookmarkId);
     bookmark.archive_this();
     
-    $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", 
+    $(event.target).parents().eq(5).hide("slide", 
       { direction: "left" });
   },
   
@@ -72,17 +71,8 @@ SavedPages.Views.Archive = Backbone.View.extend({
     if (response) {
       var bookmarkId = $(event.currentTarget).attr("data-bookmark-id");
       var bookmark = SavedPages.bookmarks.get(bookmarkId);
-      alert(bookmarkId);
-      // alert(bookmark);
-      // bookmark.destroy({
-      //   success: function(model, response) {
-      //     
-      //     $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", { direction: "up" });
-      //     Backbone.history.navigate("/", { trigger: true });
-      //   }
-      // });
       bookmark.destroy();
-      $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", { direction: "up" });
+      $(event.target).parents().eq(5).hide("slide", { direction: "up" });
     }
   },
   

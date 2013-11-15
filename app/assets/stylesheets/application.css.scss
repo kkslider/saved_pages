@@ -219,14 +219,9 @@ body.modal-open {
 span.glyphicon {
   margin-right: 20px;
 }
-//
-//a {
-//  text-decoration: none;
-//}
 
 .side_row {
   height: 45px;
-//  margin: 15px 0px 15px 0px;
   padding-left: 20px;
   padding-top: 8px;
   font-weight: 100;
@@ -251,14 +246,7 @@ li {
   list-style: none;
   width: 100%;
   height: 58px;
-//  border-top-style: solid;
-//  border-top-color: #CFD1D1;
-//  border-top-width: 1px;
 }
-
-//.makeRed {
-//  background-color: #ca2017;
-//}
 
 .heartToggle {
   color: #c10000 !important;
@@ -271,10 +259,6 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
   margin-right: 0px;
   height: 100%;
 }
-//div.bookmark {
-//  margin-left: 15px;
-//  margin-right: 15px;
-//}
 
 // to have the entire column be a clickable link
 .clickable_bookmark {
@@ -317,7 +301,6 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
 #content {
   background-color: #DDDDDD;
   font-size: 19px;
-//  -webkit-font-smoothing: antialiased;
   padding-left: 0px;
   padding-right: 0px;
   a {
@@ -330,11 +313,6 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
   height: 58px;
   line-height: 58px;
   position: relative;
-//  padding-left: 20px;
-  
-//  border-top-style: solid;
-//  border-top-color: #CFD1D1;
-//  border-top-width: 1px;
 }
 .page_type {
   background-color: #FFFFFF;
@@ -377,12 +355,6 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
 }
 
 #paginate_container {
-//  border-left-style: solid;
-//  border-left-color: #CFD1D1;
-//  border-left-width: 1px;
-//  border-right-style: solid;
-//  border-right-color: #CFD1D1;
-//  border-right-width: 1px;
   float: right;
   text-align: center;
   margin-right: 50px;
@@ -420,10 +392,6 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
   }
 }
 
-//#edit_div > h3 {
-//  padding-bottom: 20px;
-//}
-
 #edit_bookmark_form {
   input:not([type="submit"]) {
     width: 600px;
@@ -449,9 +417,6 @@ html, body, .container-fluid, .row-fluid, .col-md-2, .col-md-10, .col-md-9, .col
 #summary_label {
   padding-right: 10px;
 }
-
-
-
 
 
 /* ------ */

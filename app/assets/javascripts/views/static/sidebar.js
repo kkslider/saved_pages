@@ -24,7 +24,6 @@ SavedPages.Views.Sidebar = Backbone.View.extend({
     $('#' + pageType + '_link').css('color', '#ffffff');
     $('#' + pageType + '_link').children('span').eq(0).css('color', '#ffffff');
     SavedPages.currentNav = pageType + "_link"
-    // alert('hello');
   },
   
   mouseOverNav: function() {

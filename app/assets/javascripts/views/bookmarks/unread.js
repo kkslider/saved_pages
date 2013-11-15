@@ -62,7 +62,7 @@ SavedPages.Views.Unread = Backbone.View.extend({
     var bookmark = SavedPages.bookmarks.get(bookmarkId);
     bookmark.archive_this();
     
-    $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", 
+    $(event.target).parents().eq(5).hide("slide", 
       { direction: "right" });
   },
   
@@ -72,17 +72,8 @@ SavedPages.Views.Unread = Backbone.View.extend({
     if (response) {
       var bookmarkId = $(event.currentTarget).attr("data-bookmark-id");
       var bookmark = SavedPages.bookmarks.get(bookmarkId);
-      alert(bookmarkId);
-      // alert(bookmark);
-      // bookmark.destroy({
-      //   success: function(model, response) {
-      //     
-      //     $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", { direction: "up" });
-      //     Backbone.history.navigate("/", { trigger: true });
-      //   }
-      // });
       bookmark.destroy();
-      $(event.target).parent().parent().parent().parent().parent().parent().hide("slide", { direction: "up" });
+      $(event.target).parents().eq(5).hide("slide", { direction: "up" });
     }
   },
   
