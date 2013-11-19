@@ -40,7 +40,6 @@ class BookmarksController < ApplicationController
   end
   
   def unread
-    # return if !current_user
     if params[:unread]
       @bookmarks = current_user.bookmarks.where(is_archived: false).order("created_at DESC").page(params[:page])
     elsif params[:liked]
