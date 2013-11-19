@@ -28,6 +28,7 @@ end
 
 gem 'backbone-on-rails'
 gem 'ejs'
+gem 'figaro'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
