@@ -6,7 +6,6 @@ SavedPages.AppRouter = Backbone.Router.extend({
   
   routes: {
     "u/:page" : "showUnread",
-    // "u?page=:page": "showUnread",
     "u": "showUnread",
     "users/new": "newUser",
     "liked/:page": "showLiked",
@@ -15,7 +14,6 @@ SavedPages.AppRouter = Backbone.Router.extend({
     "session/new": "newSession",
     "bookmarks/:id/edit": "editBookmark",
     "save" : "howToSave",
-    // "bookmarks/:id": "destroyBookmark"
   },
   
   newUser: function() {

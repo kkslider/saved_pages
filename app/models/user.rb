@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   
   before_validation(on: :create) do
     self.reset_session_token if !self.session_token
-    # self.set_bookmarklet_token!
   end
   
   before_create :set_bookmarklet_token
