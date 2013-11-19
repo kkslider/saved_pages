@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131114092745) do
+ActiveRecord::Schema.define(:version => 20131119051610) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -39,15 +39,13 @@ ActiveRecord::Schema.define(:version => 20131114092745) do
   add_index "friends", ["user_id"], :name => "index_friends_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",             :null => false
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.string   "email",           :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "session_token"
-    t.string   "password_digest",   :null => false
-    t.string   "bookmarklet_token"
+    t.string   "password_digest", :null => false
   end
 
-  add_index "users", ["bookmarklet_token"], :name => "index_users_on_bookmarklet_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end
