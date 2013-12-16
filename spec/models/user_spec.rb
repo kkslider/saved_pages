@@ -13,9 +13,11 @@ describe User do
     FactoryGirl.build(:user, password: nil).should_not be_valid
   end
   
-  describe "associations" do
-    it { should have_many(:bookmarks) }
-    
+  it "should assign session_token before validation" do
+    FactoryGirl.build(:user, session_token: nil).should be_valid
   end
   
+  describe "associations" do
+    it { should have_many(:bookmarks) }
+  end
 end
