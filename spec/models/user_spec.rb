@@ -13,4 +13,9 @@ describe User do
     FactoryGirl.build(:user, password: nil).should_not be_valid
   end
   
+  describe "associations" do
+    it { should have_many(:bookmarks) }
+    
+  end
+  
 end
