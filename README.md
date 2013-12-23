@@ -1,6 +1,6 @@
 ## What does this do?
 
-SavedPages is a working clone of Instapaper, the popular 'read later' app. SavedPages provides a bookmarklet that the user can drag to his/her bookmark bar, and click at any time to save the current link to their account. 
+[SavedPages](http://www.savedpag.es/ "SavedPages") is a working clone of Instapaper, the popular 'read later' app. SavedPages provides a bookmarklet that the user can drag to his/her bookmark bar, and click at any time to save the current link to their account. 
 
 The user can then load SavedPages and view a list of their bookmarked pages. as well as perform actions on them including editing, liking, archiving, deleting, and sharing via email. 
 
